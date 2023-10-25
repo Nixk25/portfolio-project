@@ -1,0 +1,27 @@
+import React from "react";
+
+const navLinks = [
+  { href: "/", title: "Home" },
+  { href: "#about", title: "About" },
+  { href: "#skills", title: "Skills" },
+  { href: "#projects", title: "Projects" },
+  { href: "#contact", title: "Contact" },
+];
+
+const Navbar = () => {
+  return (
+    <nav className=" z-20 bg-[#AA9CFC] sm:flex hidden text-black p-3 px-7 mt-5 fixed top-0 left-[50%] translate-x-[-50%] rounded-full  gap-2 text-base text-[9px]">
+      {navLinks.map((link, i) => (
+        <a
+          key={i}
+          className="links bg-transparent  hover:bg-[#CACAFC] duration-200 ease p-2 px-3 rounded-2xl cursor-pointer"
+          href={link.href}
+        >
+          {link.title}
+        </a>
+      ))}
+    </nav>
+  );
+};
+
+export default Navbar;
