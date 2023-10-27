@@ -32,12 +32,12 @@ const icons = [
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center items-center bg-[#2E3148] w-full py-3">
+    <footer className="flex flex-col justify-center items-center bg-background border-t  w-full py-3">
       <div className="flex gap-3 my-3 text-white text-2xl ">
         {icons.map((icon, i) => (
           <a
             key={i}
-            className="hover:text-[#AA9CFC] ease duration-300 cursor-pointer"
+            className="hover:text-accent ease duration-300 cursor-pointer"
             target="_blank"
             href={icon.href}
           >
@@ -53,7 +53,7 @@ const Footer = () => {
       <div className="text-white text-center">
         <p>&copy; 2023 | All rights reserved</p>
         <p>
-          Created by <span className="text-[#AA9CFC]">Nick</span>
+          Created by <span className="text-primary">Nick</span>
         </p>
       </div>
     </footer>

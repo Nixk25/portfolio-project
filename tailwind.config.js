@@ -16,6 +16,13 @@ module.exports = {
       },
     },
     extend: {
+      colors: {
+        'text': '#ffffff',
+        'background': '#000000',
+        'primary': '#23c40e',
+        'secondary': '#02211e',
+        'accent': '#28e010',
+       },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

@@ -17,8 +17,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #090a0b;
-  color: white;
+  background-color: #000;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
@@ -31,27 +31,27 @@ body {
 
 .hovering-text:hover {
   font-weight: 900;
-  color: #aa9cfc;
+  color: #23c40e;
 }
 
 .hovering-text:hover + .hovering-text {
   font-weight: 500;
-  color: #aa9cfc;
+  color: #23c40e;
 }
 
 .hovering-text:hover + .hovering-text + .hovering-text {
   font-weight: 300;
-  color: #aa9cfc;
+  color: #23c40e;
 }
 
 .hovering-text:has(+ .hovering-text:hover) {
   font-weight: 500;
-  color: #aa9cfc;
+  color: #23c40e;
 }
 
 .hovering-text:has(+ .hovering-text + .hovering-text:hover) {
   font-weight: 300;
-  color: #aa9cfc;
+  color: #23c40e;
 }
 
 .hamburger-react {

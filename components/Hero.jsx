@@ -36,13 +36,13 @@ const Hero = () => {
   const { toast } = useToast();
   return (
     <>
-      <section className="bg-[#CACAFC] relative z-10 flex flex-col gap-6 h-[120vh] overflow-hidden  justify-center items-center w-full ">
+      <section className="bg-background relative z-10 flex flex-col gap-6 h-[120vh] overflow-hidden  justify-center items-center w-full ">
         <HeroText />
         <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-50%]">
           {icons.map((icon, i) => (
             <a
               key={i}
-              className="hover:text-[#AA9CFC]  text-[#2E3148] relative text-2xl ease duration-300 cursor-pointer"
+              className="hover:text-primary  text-text relative text-2xl ease duration-300 cursor-pointer"
               target="_blank"
               href={icon.href}
             >
@@ -55,7 +55,7 @@ const Hero = () => {
             </a>
           ))}
         </div>
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col">
           <Button size="lg">
             <a
               onClick={() => {
@@ -74,7 +74,7 @@ const Hero = () => {
             <a href="#contact">Contact Me</a>
           </Button>
         </div>
-        <div className=" absolute bottom-0 left bg-[url('../public/waves.svg')] bg-center bg-no-repeat w-full"></div>
+        <div className=" z-[100] absolute bottom-0 left-0 bg-[url('../public/wave.svg')] bg-center bg-no-repeat bg-cover w-[105vw] h-[150px] xl:h-[300px]   sm:h-[220px]"></div>
       </section>
     </>
   );
@@ -82,7 +82,7 @@ const Hero = () => {
 
 const HeroText = () => {
   return (
-    <h1 className=" sm:text-5xl text-3xl text-center w-[80%] leading-tighter tracking-tighter">
+    <h1 className=" max-[320px]:text-2xl sm:text-5xl text-3xl text-center w-[80%] leading-tighter tracking-tighter">
       {"Hi, my name is Nicolas and I like to play with Front-End. My main focus is React (Next.js)."
         .split("")
         .map((child, i) => (
