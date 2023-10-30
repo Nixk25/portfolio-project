@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <main className='w-full relative'>  
+        <main className='w-full h-full relative'>  
           <Navbar/>
           <Menu/>
           {children}

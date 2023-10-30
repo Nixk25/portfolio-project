@@ -36,7 +36,7 @@ const Hero = () => {
   const { toast } = useToast();
   return (
     <>
-      <section className="bg-background relative z-10 flex flex-col gap-6 h-[120vh] overflow-hidden  justify-center items-center w-full ">
+      <section className="bg-background relative z-10 flex flex-col gap-6 min-h-[90vh] overflow-hidden justify-center pb-[150px]  items-center  w-full ">
         <HeroText />
         <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-50%]">
           {icons.map((icon, i) => (
@@ -82,7 +82,7 @@ const Hero = () => {
 
 const HeroText = () => {
   return (
-    <h1 className=" max-[320px]:text-2xl sm:text-5xl text-3xl text-center w-[80%] leading-tighter tracking-tighter">
+    <h1 className="text-stroke max-[320px]:text-2xl sm:text-5xl text-3xl text-center max-w-[550px] sm:max-w-[80%] leading-tighter tracking-tighter p-5">
       {"Hi, my name is Nicolas and I like to play with Front-End. My main focus is React (Next.js)."
         .split("")
         .map((child, i) => (

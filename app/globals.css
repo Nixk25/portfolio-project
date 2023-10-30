@@ -31,30 +31,40 @@ body {
 
 .hovering-text:hover {
   font-weight: 900;
-  color: #23c40e;
+  -webkit-text-fill-color: #23c40e;
+  -webkit-text-stroke: 1px transparent;
 }
 
 .hovering-text:hover + .hovering-text {
   font-weight: 500;
-  color: #23c40e;
+  -webkit-text-fill-color: #23c40e;
+  -webkit-text-stroke: 0px transparent;
 }
 
 .hovering-text:hover + .hovering-text + .hovering-text {
   font-weight: 300;
-  color: #23c40e;
+  -webkit-text-fill-color: #23c40e;
+  -webkit-text-stroke: 0px transparent;
 }
 
 .hovering-text:has(+ .hovering-text:hover) {
   font-weight: 500;
-  color: #23c40e;
+  -webkit-text-fill-color: #23c40e;
+  -webkit-text-stroke: 0px transparent;
 }
 
 .hovering-text:has(+ .hovering-text + .hovering-text:hover) {
   font-weight: 300;
-  color: #23c40e;
+  -webkit-text-fill-color: #23c40e;
+  -webkit-text-stroke: 0px transparent;
 }
 
 .hamburger-react {
   z-index: 52;
   cursor: pointer;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #fff;
+  -webkit-text-fill-color: transparent;
 }

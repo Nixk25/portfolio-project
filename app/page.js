@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className=" grow mt-24 w-full relative">
+    <main className=" overflow-y-hidden mt-24 w-full relative">
       <Hero/>
       <About/>
       <Skills/>
