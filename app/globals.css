@@ -68,3 +68,91 @@ body {
   -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
 }
+
+.cont:nth-child(1) {
+  transition: background-color ease 200ms;
+}
+.cont:nth-child(2) {
+  transition: background-color ease 200ms;
+}
+.cont:nth-child(3) {
+  transition: background-color ease 200ms;
+}
+.cont:nth-child(4) {
+  transition: background-color ease 200ms;
+}
+.cont:nth-child(5) {
+  transition: background-color ease 200ms;
+}
+.cont:nth-child(6) {
+  transition: background-color ease 200ms;
+}
+.cont:nth-child(7) {
+  transition: background-color ease 200ms;
+}
+
+.cont:nth-child(1):hover {
+  background-color: #e34f26;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(2):hover {
+  background-color: #244cdd;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(3):hover {
+  background-color: #e8d44e;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(4):hover {
+  background-color: #5fd3f3;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(6):hover {
+  background-color: #36b7f0;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(7):hover {
+  background-color: #c76494;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(8):hover {
+  background-color: #e405b6;
+  transition: background-color ease 0.2s;
+}
+
+.project:nth-child(1) .image {
+  transition: border ease 200ms;
+  border: transparent 3px solid;
+}
+.project:nth-child(2) .image {
+  border: transparent 3px solid;
+  transition: border ease 200ms;
+}
+.project:nth-child(3) .image {
+  border: transparent 3px solid;
+  transition: border ease 200ms;
+}
+.project:nth-child(4) .image {
+  border: transparent 3px solid;
+  transition: border ease 200ms;
+}
+.project:nth-child(5) .image {
+  border: transparent 3px solid;
+  transition: border ease 200ms;
+}
+
+.project:nth-child(1):hover .image {
+  border: 3px solid #aa2920;
+}
+.project:nth-child(2):hover .image {
+  border: 3px solid #d6873d;
+}
+.project:nth-child(3):hover .image {
+  border: 3px solid #e18cbd;
+}
+.project:nth-child(4):hover .image {
+  border: 3px solid #f9d546;
+}
+.project:nth-child(5):hover .image {
+  border: 3px solid #323ffa;
+}

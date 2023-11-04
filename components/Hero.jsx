@@ -38,7 +38,7 @@ const Hero = () => {
     <>
       <section className="bg-background relative z-10 flex flex-col gap-6 min-h-[90vh] overflow-hidden justify-center pb-[150px]  items-center  w-full ">
         <HeroText />
-        <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-50%]">
+        <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-110%]">
           {icons.map((icon, i) => (
             <a
               key={i}

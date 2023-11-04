@@ -34,7 +34,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-primary p-5 text-center flex justify-center items-center flex-col text-black w-full"
+      className="bg-primary p-5 text-center flex justify-center items-center flex-col text-black w-full  "
     >
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter">
         About Me<span className="text-white ">.</span>
