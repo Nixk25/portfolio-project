@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
+import Link from "next/link";
 
 const icons = [
   {
@@ -40,7 +41,7 @@ const Hero = () => {
         <HeroText />
         <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-110%]">
           {icons.map((icon, i) => (
-            <a
+            <Link
               key={i}
               className="hover:text-primary  text-text relative text-2xl ease duration-300 cursor-pointer"
               target="_blank"
@@ -52,7 +53,7 @@ const Hero = () => {
                 </HoverCardTrigger>
                 <HoverCardContent>{icon.name}</HoverCardContent>
               </HoverCard>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col">

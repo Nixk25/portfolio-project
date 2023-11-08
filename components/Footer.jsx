@@ -6,6 +6,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+import Link from "next/link";
 
 const icons = [
   {
@@ -35,7 +36,7 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center bg-background border-t  w-full py-3">
       <div className="flex gap-3 my-3 text-white text-2xl ">
         {icons.map((icon, i) => (
-          <a
+          <Link
             key={i}
             className="hover:text-accent ease duration-300 cursor-pointer"
             target="_blank"
@@ -47,7 +48,7 @@ const Footer = () => {
               </HoverCardTrigger>
               <HoverCardContent>{icon.name}</HoverCardContent>
             </HoverCard>
-          </a>
+          </Link>
         ))}
       </div>
       <div className="text-white text-center">

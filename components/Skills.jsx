@@ -9,12 +9,12 @@ import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
+import { AiFillGithub } from "react-icons/ai";
 
 const technologies = [
   {
     name: "HTML",
-    color: "#E34F26",
+    color: "E34F26",
     icon: <AiFillHtml5 />,
   },
 
@@ -55,9 +55,9 @@ const technologies = [
   },
 
   {
-    name: "Framer Motion",
-    color: "E405B6",
-    icon: <TbBrandFramerMotion />,
+    name: "Git",
+    color: "FFFFFF",
+    icon: <AiFillGithub />,
   },
 ];
 
@@ -101,7 +101,7 @@ const Skills = () => {
   };
 
   return (
-    <section>
+    <section className="my-[200px]">
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Skills<span className="text-white">.</span>
       </h1>
