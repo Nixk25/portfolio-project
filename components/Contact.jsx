@@ -15,10 +15,10 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      "service_0v4xwrp",
-      "template_y9cyuxx",
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
       form.current,
-      "yFTxlqz53gxh2h1cQ"
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
     );
   };
 
@@ -42,7 +42,7 @@ const Contact = () => {
                 <input
                   className="p-3 border-none text-black rounded-lg focus:outline-primary w-full "
                   type="text"
-                  name="from_name"
+                  name="user_name"
                   placeholder="Your Name.."
                   required
                 />
