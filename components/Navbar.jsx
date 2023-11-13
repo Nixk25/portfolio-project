@@ -1,7 +1,7 @@
 import React from "react";
 
 const navLinks = [
-  { href: "/", title: "Home" },
+  { href: "#home", title: "Home" },
   { href: "#about", title: "About" },
   { href: "#skills", title: "Skills" },
   { href: "#projects", title: "Projects" },

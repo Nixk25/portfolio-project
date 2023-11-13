@@ -29,6 +29,9 @@ const Menu = () => {
           <ul className="list-none flex flex-col gap-2 text-3xl">
             <li>
               <a
+                onClick={() => {
+                  setOpen(false);
+                }}
                 className="active:text-primary focus:text-primary focus:outline-none"
                 href="#"
               >
@@ -37,6 +40,9 @@ const Menu = () => {
             </li>
             <li>
               <a
+                onClick={() => {
+                  setOpen(false);
+                }}
                 className="active:text-primary focus:text-primary focus:outline-none"
                 href="#about"
               >
@@ -45,6 +51,9 @@ const Menu = () => {
             </li>
             <li>
               <a
+                onClick={() => {
+                  setOpen(false);
+                }}
                 className="active:text-primary focus:text-primary focus:outline-none"
                 href="#skills"
               >
@@ -53,6 +62,9 @@ const Menu = () => {
             </li>
             <li>
               <a
+                onClick={() => {
+                  setOpen(false);
+                }}
                 className="active:text-primary focus:text-primary focus:outline-none"
                 href="#projects"
               >
@@ -61,6 +73,9 @@ const Menu = () => {
             </li>
             <li>
               <a
+                onClick={() => {
+                  setOpen(false);
+                }}
                 className="active:text-primary focus:text-primary focus:outline-none"
                 href="#Contact"
               >

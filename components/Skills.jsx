@@ -101,7 +101,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="my-[200px]">
+    <section id="skills" className="my-[100px]">
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Skills<span className="text-white">.</span>
       </h1>

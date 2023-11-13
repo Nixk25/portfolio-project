@@ -39,7 +39,7 @@ const About = () => {
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter">
         About Me<span className="text-white ">.</span>
       </h1>
-      <p className=" mt-3 sm:max-w-[80%] mb-5 font-medium">
+      <p className=" mt-3 sm:max-w-[80%] mb-5 font-medium text-sm sm:text-base">
         Hi, I'm Nicolas, your future Front-End developer and passionate student
         from the heart of Europe! I'm currently immersed in the world of web
         technologies at university in Pardubice. For me, programming is not just
