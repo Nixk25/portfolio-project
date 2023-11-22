@@ -86,7 +86,7 @@ const Hero = () => {
 
 const HeroText = () => {
   return (
-    <h1 className="text-stroke max-[320px]:text-2xl sm:text-5xl text-3xl text-center max-w-[550px] sm:max-w-[80%] leading-tighter tracking-tighter p-5">
+    <h1 className="text-stroke max-[320px]:text-2xl sm:text-5xl text-3xl text-center max-w-[550px] sm:max-w-[90%] leading-tighter tracking-tighter p-5">
       {"Hi, my name is Nicolas and I like to play with Front-End. My main focus is React (Next.js)."
         .split("")
         .map((child, i) => (

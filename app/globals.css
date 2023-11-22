@@ -18,7 +18,7 @@ body {
   align-items: center;
   width: 100%;
   background-color: #000;
-  color: #fff;
+  color: #f2f2f2;
 }
 
 ::-webkit-scrollbar {
@@ -113,10 +113,6 @@ body {
 }
 .cont:nth-child(7):hover {
   background-color: #c76494;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(8):hover {
-  background-color: #ffffff;
   transition: background-color ease 0.2s;
 }
 
