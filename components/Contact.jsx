@@ -112,22 +112,40 @@ const Contact = () => {
                 }}
               />
             </div>
-            <Button asChild>
-              <input
-                onClick={() => {
+            <Button
+              onClick={() => {
+                if (formValues.name == "" && formValues.email == "") {
                   toast({
-                    title: "Message sent!",
-                    description: "We will get back to you soon",
+                    variant: "destructive",
+                    title: "You forgot your name and email!",
                   });
-                }}
-                className="w-full cursor-pointer"
-                type="submit"
-                value={loading}
-              />
+                } else if (formValues.name == "") {
+                  toast({
+                    variant: "destructive",
+                    title: "You forgot your name!",
+                  });
+                } else if (formValues.email == "") {
+                  toast({
+                    variant: "destructive",
+                    title: "You forgot your email!",
+                  });
+                } else {
+                  setTimeout(() => {
+                    toast({
+                      title: "Message sent!",
+                      description: "We will get back to you soon",
+                    });
+                  }, 1000);
+                }
+              }}
+              className="w-full cursor-pointer"
+              type="submit"
+            >
+              {loading}
             </Button>
           </form>
         </div>
-        <div className="lg:w-[50%] w-[80%] bg-primary rounded-lg ml-0  p-7 h-full  ">
+        <div className="lg:w-[50%] w-[80%] bg-primary rounded-lg ml-0  p-7 h-full text-black ">
           <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center mb-10 w-full">
             Contact Me<span className="text-white">.</span>
           </h1>

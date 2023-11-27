@@ -31,31 +31,31 @@ body {
 
 .hovering-text:hover {
   font-weight: 900;
-  -webkit-text-fill-color: #23c40e;
+  -webkit-text-fill-color: #dbc1ac;
   -webkit-text-stroke: 1px transparent;
 }
 
 .hovering-text:hover + .hovering-text {
   font-weight: 500;
-  -webkit-text-fill-color: #23c40e;
+  -webkit-text-fill-color: #dbc1ac;
   -webkit-text-stroke: 0px transparent;
 }
 
 .hovering-text:hover + .hovering-text + .hovering-text {
   font-weight: 300;
-  -webkit-text-fill-color: #23c40e;
+  -webkit-text-fill-color: #dbc1ac;
   -webkit-text-stroke: 0px transparent;
 }
 
 .hovering-text:has(+ .hovering-text:hover) {
   font-weight: 500;
-  -webkit-text-fill-color: #23c40e;
+  -webkit-text-fill-color: #dbc1ac;
   -webkit-text-stroke: 0px transparent;
 }
 
 .hovering-text:has(+ .hovering-text + .hovering-text:hover) {
   font-weight: 300;
-  -webkit-text-fill-color: #23c40e;
+  -webkit-text-fill-color: #dbc1ac;
   -webkit-text-stroke: 0px transparent;
 }
 
@@ -113,6 +113,10 @@ body {
 }
 .cont:nth-child(7):hover {
   background-color: #c76494;
+  transition: background-color ease 0.2s;
+}
+.cont:nth-child(9):hover {
+  background-color: #f73c01;
   transition: background-color ease 0.2s;
 }
 

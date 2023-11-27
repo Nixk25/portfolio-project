@@ -10,6 +10,7 @@ import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
+import { SiSvelte } from "react-icons/si";
 
 const technologies = [
   {
@@ -59,6 +60,10 @@ const technologies = [
     color: "FFFFFF",
     icon: <AiFillGithub />,
   },
+  {
+    name: "Svelte",
+    icon: <SiSvelte />,
+  },
 ];
 
 const Skills = () => {
@@ -101,7 +106,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="my-[100px]">
+    <section id="skills" className="my-[150px]">
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Skills<span className="text-white">.</span>
       </h1>

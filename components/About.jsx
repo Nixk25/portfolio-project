@@ -34,7 +34,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-primary p-5 text-center flex justify-center items-center flex-col text-black w-full  "
+      className="bg-primary p-5 pb-20 text-center flex justify-center items-center flex-col text-black w-full relative oveflow-x-hidden"
     >
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter">
         About Me<span className="text-white ">.</span>
@@ -72,6 +72,7 @@ const About = () => {
           </div>
         ))}
       </div>
+      <div className=" absolute bottom-[-50px] left-0 w-[100%] h-[110px] bg-primary skew-y-[-4deg] "></div>
     </section>
   );
 };
