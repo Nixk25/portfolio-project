@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-const TiltingCard = ({ name, icon, index }) => {
+const TiltingCard = ({ name, icon, index, color }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -64,11 +64,12 @@ const TiltingCard = ({ name, icon, index }) => {
       whileInView="animate"
       whileHover={{
         scale: 1.2,
+        backgroundColor: color,
       }}
       transition={{
-        duration: 0.3,
+        duration: 0.4,
         type: "spring",
-        stiffness: 120,
+        stiffness: 100,
       }}
       viewport={{ once: true }}
       onMouseMove={handleMouseMove}
@@ -78,7 +79,7 @@ const TiltingCard = ({ name, icon, index }) => {
         rotateX,
         transformStyle: "preserve-3d",
       }}
-      className={`relative h-40 w-52 rounded-lg bg-white cont`}
+      className={`relative h-40 w-52 rounded-lg bg-white`}
     >
       <p
         style={{

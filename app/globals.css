@@ -91,35 +91,6 @@ body {
   transition: background-color ease 200ms;
 }
 
-.cont:nth-child(1):hover {
-  background-color: #e34f26;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(2):hover {
-  background-color: #244cdd;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(3):hover {
-  background-color: #e8d44e;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(4):hover {
-  background-color: #5fd3f3;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(6):hover {
-  background-color: #36b7f0;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(7):hover {
-  background-color: #c76494;
-  transition: background-color ease 0.2s;
-}
-.cont:nth-child(9):hover {
-  background-color: #f73c01;
-  transition: background-color ease 0.2s;
-}
-
 .project:nth-child(1) .image {
   transition: border ease 200ms;
   border: transparent 3px solid;

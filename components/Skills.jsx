@@ -21,47 +21,48 @@ const technologies = [
 
   {
     name: "CSS",
-    color: "244CDD",
+    color: "#244CDD",
     icon: <IoLogoCss3 />,
   },
 
   {
     name: "JavaScript",
-    color: "E8D44E",
+    color: "#E8D44E",
     icon: <BiLogoJavascript />,
   },
 
   {
     name: "React",
-    color: "5FD3F3",
+    color: "#5FD3F3",
     icon: <FaReact />,
   },
 
   {
     name: "Next.Js",
-    color: "000000",
+    color: "#fff",
     icon: <SiNextdotjs />,
   },
 
   {
     name: "Tailwind CSS",
-    color: "36B7F0",
+    color: "#36B7F0",
     icon: <SiTailwindcss />,
   },
 
   {
     name: "SASS",
-    color: "C76494",
+    color: "#C76494",
     icon: <SiSass />,
   },
 
   {
     name: "Git",
-    color: "FFFFFF",
+    color: "#FFFFFF",
     icon: <AiFillGithub />,
   },
   {
     name: "Svelte",
+    color: "#f73c01",
     icon: <SiSvelte />,
   },
 ];
@@ -79,6 +80,7 @@ const Skills = () => {
             name={technology.name}
             icon={technology.icon}
             index={i}
+            color={technology.color}
           />
         ))}
       </div>
