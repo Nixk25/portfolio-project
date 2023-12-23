@@ -9,6 +9,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const icons = [
   {
@@ -44,7 +45,10 @@ const Hero = () => {
         <HeroText />
         <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-110%]">
           {icons.map((icon, i) => (
-            <Link
+            <motion.a
+              initial={{ right: -100, scale: 0 }}
+              animate={{ right: 0, scale: 1 }}
+              transition={{ duration: i * 0.1 }}
               key={i}
               className="hover:text-primary  text-text relative text-2xl ease duration-300 cursor-pointer"
               target="_blank"
@@ -56,10 +60,15 @@ const Hero = () => {
                 </HoverCardTrigger>
                 <HoverCardContent>{icon.name}</HoverCardContent>
               </HoverCard>
-            </Link>
+            </motion.a>
           ))}
         </div>
-        <div className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col"
+        >
           <Button size="lg">
             <a
               onClick={() => {
@@ -77,7 +86,7 @@ const Hero = () => {
           <Button size="lg" asChild>
             <a href="#contact">Contact Me</a>
           </Button>
-        </div>
+        </motion.div>
         <div className=" z-[100] absolute bottom-0 left-0 bg-[url('../public/wave.svg')] bg-center bg-no-repeat bg-cover w-[105vw] h-[150px] xl:h-[300px]   sm:h-[220px]"></div>
       </section>
     </>
@@ -90,9 +99,15 @@ const HeroText = () => {
       {"Hi, my name is Nicolas and I like to play with Front-End. My main focus is React (Next.js)."
         .split("")
         .map((child, i) => (
-          <span className="hovering-text" key={i}>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: i * 0.02 }}
+            className="hovering-text"
+            key={i}
+          >
             {child}
-          </span>
+          </motion.span>
         ))}
     </h1>
   );

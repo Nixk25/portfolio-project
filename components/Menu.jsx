@@ -77,7 +77,7 @@ const Menu = () => {
                   setOpen(false);
                 }}
                 className="active:text-primary focus:text-primary focus:outline-none"
-                href="#Contact"
+                href="#contact"
               >
                 Contact
               </a>

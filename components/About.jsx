@@ -72,7 +72,7 @@ const About = () => {
           </div>
         ))}
       </div>
-      <div className=" absolute bottom-[-50px] left-0 w-[100%] h-[110px] bg-primary skew-y-[-4deg] "></div>
+      <div className=" absolute bottom-[-50px] left-0 w-[100%] h-[110px] bg-primary skew-y-[-3deg] "></div>
     </section>
   );
 };

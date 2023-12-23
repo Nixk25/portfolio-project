@@ -18,6 +18,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -26,6 +27,7 @@ const projects = [
     image: Cars,
     url: "https://car-webpage.vercel.app/",
     git: "https://github.com/Nixk25/car_webpage",
+    color: "#8ACFF1",
   },
   {
     name: "Brewtique",
@@ -33,6 +35,7 @@ const projects = [
     image: Brewtique,
     url: "https://brewtique.netlify.app/",
     git: "https://github.com/Nixk25/Coffee-Shop",
+    color: "#d6873d",
   },
   {
     name: "Nutritional counselling Lucie",
@@ -40,6 +43,7 @@ const projects = [
     image: Vyziva,
     url: "https://nutritionallucie.netlify.app/",
     git: "https://github.com/Nixk25/Vyziva",
+    color: "#e18cbd",
   },
   {
     name: "HouseFix",
@@ -47,6 +51,7 @@ const projects = [
     image: HouseFix,
     url: "https://nixk25.github.io/build/",
     git: "https://github.com/Nixk25/build",
+    color: "#f9d546",
   },
   {
     name: "My old portfolio",
@@ -54,6 +59,7 @@ const projects = [
     image: OldPort,
     url: "https://nicolasmelda.cz",
     git: "https://github.com/Nixk25/Portfolio",
+    color: "#323ffa",
   },
 ];
 
@@ -65,60 +71,104 @@ const Projects = () => {
       </h1>
       <div className="flex justify-center items-center gap-10 flex-wrap text-center">
         {projects.map((project, i) => (
-          <div
+          <motion.div
+            initial={{ borderColor: "transparent", y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            whileHover={{ borderColor: project.color, scale: 1.1 }}
+            transition={{
+              duration: 0.2,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: true }}
             key={i}
-            className="bg-white text-black p-5 rounded-md flex flex-col gap-5 project hover:scale-105 transition-transform  ease duration-300 border-[5px] border-transparent parent cursor-pointer"
+            className="bg-white text-black p-5 rounded-md flex flex-col gap-5 project hover:scale-105 transition-transform  ease duration-300 border-[5px] border-transparent h-max sm:min-h-[500px]"
           >
             <Image
               src={project.image}
               height={600}
               width={600}
-              alt={`${project.name}`}
-              className="rounded-md "
+              alt={project.name}
+              className="rounded-md shadow-lg border-none outline-none"
             />
             <p className=" font-semibold text-2xl">{project.name}</p>
             <div className="flex gap-5 justify-center items-center">
               <Button
                 asChild
-                className=" hover:scale-105 transition-transform ease duration-200 btn text-white border-none outline-none"
+                className=" hover:scale-105 transition-transform ease duration-200  text-white border-none outline-none"
               >
-                <a href={project.url} target="_blank">
+                <motion.a
+                  initial={{ backgroundColor: "#dbc1ac" }}
+                  whileHover={{ backgroundColor: project.color }}
+                  transition={{ duration: 0.2 }}
+                  href={project.url}
+                  target="_blank"
+                >
                   Live Demo
-                </a>
+                </motion.a>
               </Button>
-              <Dialog>
+              <Dialog className="w-[200px] h-[200px]">
                 <DialogTrigger asChild>
-                  <Button className="hover:scale-105 transition-transform ease duration-200 btn text-white border-none outline-none">
-                    View More
+                  <Button
+                    asChild
+                    className="hover:scale-105 cursor-pointer transition-transform ease duration-200  text-white border-none outline-none"
+                  >
+                    <motion.span
+                      initial={{ backgroundColor: "#dbc1ac" }}
+                      whileHover={{ backgroundColor: project.color }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      View More
+                    </motion.span>
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="rounded-lg w-[80%] sm:w-full">
                   <DialogHeader className="flex justify-center items-center gap-3 flex-col w-full">
                     <Image
                       src={project.image}
-                      className=" w-full border-2 border-black rounded-lg my-4 "
+                      className=" w-full rounded-md shadow-lg  my-4 "
                     />
                     <DialogTitle className="text-black text-2xl w-full  text-center ">
                       {project.name}
                     </DialogTitle>
-                    <DialogDescription className="w-full h-max text-center">
-                      {project.desc}
+                    <DialogDescription className="text-center">
+                      {project.desc.split("").map((letter, i) => (
+                        <motion.span
+                          initial={{
+                            opacity: 0,
+                            y: -100,
+                          }}
+                          whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                              duration: 0.1,
+                              delay: 0.0055 * i,
+                            },
+                          }}
+                          key={i}
+                        >
+                          {letter}
+                        </motion.span>
+                      ))}
                     </DialogDescription>
                   </DialogHeader>
                   <DialogFooter className="mt-3 w-full">
-                    <Button
-                      className="bg-black text-white hover:scale-105 hover:bg-black hover:text-white transition-transform ease duration-300 "
-                      asChild
-                    >
-                      <Link href={project.git} target="_blank">
+                    <Button asChild className="text-white">
+                      <motion.a
+                        initial={{ backgroundColor: "#dbc1ac" }}
+                        whileHover={{ backgroundColor: project.color }}
+                        transition={{ duration: 0.2 }}
+                        href={project.git}
+                        target="_blank"
+                      >
                         View source code
-                      </Link>
+                      </motion.a>
                     </Button>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

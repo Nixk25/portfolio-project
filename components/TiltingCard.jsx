@@ -63,13 +63,7 @@ const TiltingCard = ({ name, icon, index, color }) => {
       initial="initial"
       whileInView="animate"
       whileHover={{
-        scale: 1.2,
         backgroundColor: color,
-      }}
-      transition={{
-        duration: 0.4,
-        type: "spring",
-        stiffness: 100,
       }}
       viewport={{ once: true }}
       onMouseMove={handleMouseMove}
@@ -79,7 +73,7 @@ const TiltingCard = ({ name, icon, index, color }) => {
         rotateX,
         transformStyle: "preserve-3d",
       }}
-      className={`relative h-40 w-52 rounded-lg bg-white`}
+      className="relative h-40 w-52 rounded-lg bg-white select-none card  "
     >
       <p
         style={{
