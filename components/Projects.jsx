@@ -4,7 +4,6 @@ import React from "react";
 import Brewtique from "../public/brewtique.png";
 import Cars from "../public/cars.png";
 import Vyziva from "../public/vyziva.png";
-import OldPort from "../public/old-port.png";
 import HouseFix from "../public/housefix.png";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -17,7 +16,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -52,14 +50,6 @@ const projects = [
     url: "https://nixk25.github.io/build/",
     git: "https://github.com/Nixk25/build",
     color: "#f9d546",
-  },
-  {
-    name: "My old portfolio",
-    desc: "My old portfolio is website that was used to showcase my best skills and projects. This site was created using basic web technologies including HTML5, CSS3 and JavaScript. It served as a space to showcase my past work, skills and experience in web development.",
-    image: OldPort,
-    url: "https://nicolasmelda.cz",
-    git: "https://github.com/Nixk25/Portfolio",
-    color: "#323ffa",
   },
 ];
 

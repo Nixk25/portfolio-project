@@ -11,6 +11,8 @@ import { SiTailwindcss } from "react-icons/si";
 import { SiSass } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import { SiSvelte } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiOracle } from "react-icons/si";
 
 const technologies = [
   {
@@ -64,6 +66,16 @@ const technologies = [
     name: "Svelte",
     color: "#f73c01",
     icon: <SiSvelte />,
+  },
+  {
+    name: "TypeScript",
+    color: "#2F75C0",
+    icon: <SiTypescript />,
+  },
+  {
+    name: "Oracle DB",
+    color: "#F40F13",
+    icon: <SiOracle />,
   },
 ];
 
