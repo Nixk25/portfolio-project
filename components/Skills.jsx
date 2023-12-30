@@ -2,17 +2,18 @@
 
 import React from "react";
 import TiltingCard from "./TiltingCard";
-import { AiFillHtml5 } from "react-icons/ai";
+import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
 import { IoLogoCss3 } from "react-icons/io";
 import { BiLogoJavascript } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { SiSass } from "react-icons/si";
-import { AiFillGithub } from "react-icons/ai";
-import { SiSvelte } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
-import { SiOracle } from "react-icons/si";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiSass,
+  SiSvelte,
+  SiTypescript,
+  SiOracle,
+} from "react-icons/si";
 
 const technologies = [
   {

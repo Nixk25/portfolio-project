@@ -138,7 +138,7 @@ const Contact = () => {
                   }, 1000);
                 }
               }}
-              className="w-full cursor-pointer"
+              className="w-full cursor-pointe"
               type="submit"
             >
               {loading}
