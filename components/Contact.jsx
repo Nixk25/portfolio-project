@@ -42,6 +42,18 @@ const Contact = () => {
     }, 1000);
   };
 
+  const handleMouseMove = (e) => {
+    const card = document.querySelector(".contact-card");
+
+    const rect = card.getBoundingClientRect();
+
+    const left = e.clientX - rect.left;
+    const top = e.clientY - rect.top;
+
+    card.style.setProperty("--left", `${left}px`);
+    card.style.setProperty("--top", `${top}px`);
+  };
+
   return (
     <section
       id="contact"
@@ -50,8 +62,8 @@ const Contact = () => {
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Get in touch<span className="text-white">.</span>
       </h1>
-      <div className="flex  justify-center items-center lg:justify-normal lg:items-start w-full lg:w-[70%] mt-[100px] lg:flex-row flex-col gap-10">
-        <div className="lg:w-[50%] w-[80%]">
+      <div className="flex  justify-center items-center  w-full  mt-[100px] flex-col gap-10">
+        <div className=" w-[80%]">
           <form
             className="flex flex-col flex-wrap justify-center items-center gap-5 w-full"
             ref={form}
@@ -145,8 +157,11 @@ const Contact = () => {
             </Button>
           </form>
         </div>
-        <div className="lg:w-[50%] w-[80%] bg-primary rounded-lg ml-0  p-7 h-full text-black ">
-          <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center mb-10 w-full">
+        <div
+          onMouseMove={handleMouseMove}
+          className=" w-[80%] bg-primary rounded-lg overflow-hidden   p-7 text-black contact-card "
+        >
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tighter tracking-tighter text-center mb-10 w-full">
             Contact Me<span className="text-white">.</span>
           </h1>
           <div className="flex  pl-5 gap-5 flex-col w-full">
@@ -154,13 +169,18 @@ const Contact = () => {
               <div className="bg-white/20 rounded-full p-3 flex justify-center items-center max-[420px]:hidden ">
                 <SiMinutemailer />
               </div>
-              <span>Email: nicolas.melda@icloud.com</span>
+              <span>
+                <span className=" select-none">Email:</span>{" "}
+                nicolas.melda@icloud.com
+              </span>
             </div>
             <div className="flex justify-center max-[500px]:justify-normal  items-center gap-5 ">
               <div className="bg-white/20 rounded-full p-3 flex justify-center items-center max-[420px]:hidden">
                 <AiFillPhone />
               </div>
-              <span>Phone: +420 606 047 025</span>
+              <span>
+                <span className=" select-none">Phone:</span> +420 606 047 025
+              </span>
             </div>
           </div>
         </div>

@@ -76,3 +76,68 @@ body {
 .card:hover {
   scale: 1.2;
 }
+
+.numbers {
+  position: relative;
+  overflow: hidden;
+}
+
+.numbers .name {
+  z-index: 2;
+}
+
+.numbers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #dbc1ac;
+  border-radius: inherit;
+  height: 120%;
+  width: 100%;
+  z-index: -2;
+  filter: blur(5px);
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 1turn;
+  }
+}
+
+.numbers::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background-color: black;
+  z-index: 1;
+}
+
+.contact-card {
+  position: relative;
+  --left: 0px;
+  --top: 0px;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  left: var(--left);
+  top: var(--top);
+  transform: translate(-50%, -50%) scale(1.5);
+  filter: blur(50px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+  cursor: none;
+}

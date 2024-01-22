@@ -80,7 +80,7 @@ const Projects = () => {
               className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4  "
             >
               <div className="p-1">
-                <Card className="min-h-[350px] max-h-[400px]  rounded-md relative">
+                <Card className="sm:min-h-[350px] max-h-[400px]  rounded-md relative">
                   <CardContent className="flex flex-col items-center justify-center text-center p-0 ">
                     <Image
                       src={project.image}
@@ -89,10 +89,10 @@ const Projects = () => {
                       alt={project.name}
                       className="rounded-md border-transparent outline-none max-h-[300px]   mb-5"
                     />
-                    <p className=" font-semibold text-2xl px-6 mb-[50px]">
+                    <h2 className=" font-semibold text-2xl px-6 mb-[150px] sm:mb-[70px]">
                       {project.name}
-                    </p>
-                    <div className="flex gap-5 justify-center items-center absolute bottom-3 left-[50%] translate-x-[-50%]">
+                    </h2>
+                    <div className="flex flex-col sm:flex-row  gap-5 justify-center items-center absolute bottom-3 left-[50%] translate-x-[-50%]">
                       <Button
                         asChild
                         className=" hover:scale-105 transition-transform ease duration-200  text-white border-none outline-none"
@@ -108,7 +108,7 @@ const Projects = () => {
                         </motion.a>
                       </Button>
 
-                      <Dialog className="w-[200px] h-[200px]">
+                      <Dialog className="w-[200px] h-[200px] ">
                         <DialogTrigger asChild>
                           <Button
                             asChild

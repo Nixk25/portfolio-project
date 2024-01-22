@@ -8,8 +8,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Button } from "./ui/button";
 import { useToast } from "./ui/use-toast";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const icons = [
   {
@@ -34,13 +34,32 @@ const icons = [
   },
 ];
 
+const circles = [
+  {
+    desc: "Hours on my chair",
+    number: 1000,
+  },
+  {
+    desc: "Tutorials watched",
+    number: 2000,
+  },
+  {
+    desc: "Bugs fixed",
+    number: 10000,
+  },
+  {
+    desc: "Hours cried",
+    number: 50,
+  },
+];
+
 const Hero = () => {
   const { toast } = useToast();
   return (
     <>
       <section
         id="home"
-        className="bg-background relative z-10 flex flex-col gap-6 min-h-[90vh] overflow-hidden justify-center pb-[150px]  items-center  w-full "
+        className="bg-background relative z-10 flex flex-col gap-6 min-h-[100vh] overflow-hidden justify-center pb-[150px]  items-center  w-full "
       >
         <HeroText />
         <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-110%]">
@@ -64,9 +83,12 @@ const Hero = () => {
           ))}
         </div>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
           className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col"
         >
           <Button size="lg">
@@ -87,7 +109,27 @@ const Hero = () => {
             <a href="#contact">Contact Me</a>
           </Button>
         </motion.div>
-        <div className=" z-[100] absolute bottom-0 left-0 bg-[url('../public/wave.svg')] bg-center bg-no-repeat bg-cover w-[105vw] h-[150px] xl:h-[300px]   sm:h-[220px]"></div>
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, type: "spring" }}
+          className="my-5 flex gap-10 text-center text-white sm:flex-row flex-col justify-between items-center flex-wrap w-full max-w-[80%] rounded-lg numbers "
+        >
+          {circles.map((circle, i) => (
+            <div
+              className="flex justify-center items-center flex-col gap-3 p-10"
+              key={i}
+            >
+              <div className="name">
+                <h2 className="text-2xl font-bold">
+                  <CountUp start={0} end={circle.number} duration={4} />+
+                </h2>
+
+                <p>{circle.desc}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </section>
     </>
   );

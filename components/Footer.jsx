@@ -52,7 +52,7 @@ const Footer = () => {
         ))}
       </div>
       <div className="text-white text-center">
-        <p>&copy; 2023 | All rights reserved</p>
+        <p>&copy; 2024 | All rights reserved</p>
         <p>
           Created by <span className="text-primary">Nick</span>
         </p>

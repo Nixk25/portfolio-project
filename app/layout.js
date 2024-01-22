@@ -1,10 +1,6 @@
 import './globals.css'
-
 import { Montserrat } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import { Toaster } from '@/components/ui/toaster'
-import Menu from '@/components/Menu'
 
 
 const montserrat = Montserrat({ 
@@ -21,11 +17,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={montserrat.className}>
         <main className='w-full h-full relative'>  
-          <Navbar/>
-          <Menu/>
           {children}
-          <Footer/>
-        </main>
+        </main>  
         <Toaster/>
       </body>
     </html>
