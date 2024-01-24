@@ -63,7 +63,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="mb-[100px] sm:p-0 px-10">
+    <section id="projects" className="mb-[100px] sm:p-0 px-10 ">
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Projects<span className="text-white">.</span>
       </h1>

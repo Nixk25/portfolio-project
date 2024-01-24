@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const navLinks = [
   { href: "#home", title: "Home" },
@@ -12,11 +12,27 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [isHidden, setIsHidden] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const prev = scrollY.getPrevious();
+    if (latest > prev && latest > 150) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  });
   return (
     <motion.nav
+      variants={{
+        visible: { opacity: 1, y: 0, x: "-50%" },
+        hidden: { opacity: 0, y: "-100%" },
+      }}
       className=" z-[60] bg-accent shadow-2xl sm:flex hidden text-black p-3 px-7 mt-5 fixed top-0 left-[50%] translate-x-[-50%] rounded-full  gap-2 text-base text-[9px]"
       initial={{ y: -100, x: "-50%" }}
-      animate={{ y: 0, x: "-50%" }}
+      animate={isHidden ? "hidden" : "visible"}
       transition={{
         type: "spring",
         duration: 0.3,
