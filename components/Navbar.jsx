@@ -13,7 +13,6 @@ const navLinks = [
 
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const { scrollY } = useScroll();
 
@@ -26,22 +25,6 @@ const Navbar = () => {
     }
   });
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (typeof window !== "undefined") {
-        setWindowWidth(window.innerWidth);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <motion.nav
       variants={{
@@ -50,7 +33,7 @@ const Navbar = () => {
       }}
       className=" z-[60] bg-accent shadow-2xl sm:flex hidden text-black p-3 px-7 mt-5 fixed top-0 left-[50%] translate-x-[-50%] rounded-full  gap-2 text-base text-[9px]"
       initial={{ y: -100, x: "-50%" }}
-      animate={isHidden || windowWidth < 640 ? "hidden" : "visible"}
+      animate={isHidden ? "hidden" : "visible"}
       transition={{
         type: "spring",
         duration: 0.3,
