@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import tnrb from "../public/tnrband.png";
 import Brewtique from "../public/brewtique.png";
 import Cars from "../public/cars.png";
 import Vyziva from "../public/vyziva.png";
@@ -34,6 +35,14 @@ const projects = [
     url: "https://car-webpage.vercel.app/",
     git: "https://github.com/Nixk25/car_webpage",
     color: "#8ACFF1",
+  },
+  {
+    name: "TNR-Band",
+    desc: "TNR-Band, my recent commercial project, harmonizes Next.js, Tailwind CSS, and Shadcn for a visually captivating musical experience. This tech ensemble ensures not only technical finesse but also injects humor, making TNR-Band a delightful hit for users.",
+    image: tnrb,
+    url: "https://tnr-band.vercel.app/",
+    git: "https://github.com/Nixk25/Eda",
+    color: "#FF930F",
   },
   {
     name: "Brewtique",
@@ -83,13 +92,14 @@ const Projects = () => {
                 <Card className="sm:min-h-[350px] max-h-[400px]  rounded-md relative">
                   <CardContent className="flex flex-col items-center justify-center text-center p-0 ">
                     <Image
+                      placeholder="blur"
                       src={project.image}
                       height={600}
                       width={600}
                       alt={project.name}
-                      className="rounded-md border-transparent outline-none max-h-[300px]   mb-5"
+                      className="rounded-md border-transparent outline-none max-h-[300px]   pb-5"
                     />
-                    <h2 className=" font-semibold text-2xl px-6 mb-[150px] sm:mb-[70px]">
+                    <h2 className=" font-semibold text-2xl px-6  sm:mb-[70px] mb-5">
                       {project.name}
                     </h2>
                     <div className="flex flex-col sm:flex-row  gap-5 justify-center items-center absolute bottom-3 left-[50%] translate-x-[-50%]">
@@ -126,6 +136,7 @@ const Projects = () => {
                         <DialogContent className="rounded-lg w-[80%] sm:w-full">
                           <DialogHeader className="flex justify-center items-center gap-3 flex-col w-full">
                             <Image
+                              placeholder="blur"
                               src={project.image}
                               className=" w-full rounded-md shadow-lg  my-4 "
                             />
