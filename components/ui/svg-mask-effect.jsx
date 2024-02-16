@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 export const MaskContainer = ({
   children,
   revealText,
-  size = 20,
-  revealSize = 150,
+  size = 10,
+  revealSize = 600,
   className,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
