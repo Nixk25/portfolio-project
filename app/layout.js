@@ -1,6 +1,6 @@
 import './globals.css'
 import { Montserrat } from 'next/font/google'
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from '@/components/ui/sonner'
 
 
 const montserrat = Montserrat({ 
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         <main className='w-full h-full relative'>  
           {children}
         </main>  
-        <Toaster/>
+        <Toaster richColors/>
       </body>
     </html>
   )

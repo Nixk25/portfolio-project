@@ -72,7 +72,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="mb-[100px] sm:p-0 px-10 ">
+    <section id="projects" className="mb-[100px] sm:p-0 px-10 container ">
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Projects<span className="text-white">.</span>
       </h1>
@@ -89,20 +89,18 @@ const Projects = () => {
               className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4  "
             >
               <div className="p-1">
-                <Card className="sm:min-h-[350px] max-h-[400px]  rounded-md relative">
+                <Card className="  rounded-md ">
                   <CardContent className="flex flex-col items-center justify-center text-center p-0 ">
                     <Image
                       placeholder="blur"
                       src={project.image}
-                      height={600}
-                      width={600}
                       alt={project.name}
-                      className="rounded-md border-transparent outline-none max-h-[300px]   pb-5"
+                      className="rounded-md border-transparent outline-none    pb-5"
                     />
                     <h2 className=" font-semibold text-2xl px-6  sm:mb-[70px] mb-5">
                       {project.name}
                     </h2>
-                    <div className="flex flex-col sm:flex-row  gap-5 justify-center items-center absolute bottom-3 left-[50%] translate-x-[-50%]">
+                    <div className="flex flex-wrap  gap-5 justify-center items-center pb-5 ">
                       <Button
                         asChild
                         className=" hover:scale-105 transition-transform ease duration-200  text-white border-none outline-none"

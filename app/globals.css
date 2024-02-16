@@ -119,29 +119,3 @@ body {
   background-color: black;
   z-index: 1;
 }
-
-.contact-card {
-  position: relative;
-  --left: 0px;
-  --top: 0px;
-}
-
-.contact-card::before {
-  content: "";
-  position: absolute;
-  background-color: #f5f5f5;
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-  left: var(--left);
-  top: var(--top);
-  transform: translate(-50%, -50%) scale(1.5);
-  filter: blur(50px);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.contact-card:hover::before {
-  opacity: 1;
-  cursor: none;
-}

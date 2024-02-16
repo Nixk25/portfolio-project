@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import { Button } from "./ui/button";
 import { AiFillPhone } from "react-icons/ai";
 import { SiMinutemailer } from "react-icons/si";
-import { useToast } from "./ui/use-toast";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -16,7 +16,6 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState("Send");
   const form = useRef();
-  const { toast } = useToast();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -42,22 +41,10 @@ const Contact = () => {
     }, 1000);
   };
 
-  const handleMouseMove = (e) => {
-    const card = document.querySelector(".contact-card");
-
-    const rect = card.getBoundingClientRect();
-
-    const left = e.clientX - rect.left;
-    const top = e.clientY - rect.top;
-
-    card.style.setProperty("--left", `${left}px`);
-    card.style.setProperty("--top", `${top}px`);
-  };
-
   return (
     <section
       id="contact"
-      className="mb-[100px] flex justify-center items-center flex-col rounded-lg"
+      className="mb-[100px] flex justify-center items-center flex-col rounded-lg container"
     >
       <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
         Get in touch<span className="text-white">.</span>
@@ -127,24 +114,14 @@ const Contact = () => {
             <Button
               onClick={() => {
                 if (formValues.name == "" && formValues.email == "") {
-                  toast({
-                    variant: "destructive",
-                    title: "You forgot your name and email!",
-                  });
+                  toast.error("You forgot your name and email!", {});
                 } else if (formValues.name == "") {
-                  toast({
-                    variant: "destructive",
-                    title: "You forgot your name!",
-                  });
+                  toast.error("You forgot your name!", {});
                 } else if (formValues.email == "") {
-                  toast({
-                    variant: "destructive",
-                    title: "You forgot your email!",
-                  });
+                  toast.error("You forgot your email!", {});
                 } else {
                   setTimeout(() => {
-                    toast({
-                      title: "Message sent!",
+                    toast("Message sent!", {
                       description: "We will get back to you soon",
                     });
                   }, 1000);
@@ -157,10 +134,7 @@ const Contact = () => {
             </Button>
           </form>
         </div>
-        <div
-          onMouseMove={handleMouseMove}
-          className=" w-[80%] bg-primary rounded-lg overflow-hidden   p-7 text-black contact-card "
-        >
+        <div className=" w-[80%] bg-primary rounded-lg overflow-hidden   p-7 text-black contact-card ">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tighter tracking-tighter text-center mb-10 w-full">
             Contact Me<span className="text-white">.</span>
           </h1>
@@ -169,18 +143,18 @@ const Contact = () => {
               <div className="bg-white/20 rounded-full p-3 flex justify-center items-center max-[420px]:hidden ">
                 <SiMinutemailer />
               </div>
-              <span>
+              <a href="mailto:nicolas.melda@icloud.com">
                 <span className=" select-none">Email:</span>{" "}
                 nicolas.melda@icloud.com
-              </span>
+              </a>
             </div>
             <div className="flex justify-center max-[500px]:justify-normal  items-center gap-5 ">
               <div className="bg-white/20 rounded-full p-3 flex justify-center items-center max-[420px]:hidden">
                 <AiFillPhone />
               </div>
-              <span>
+              <a href="tel:606 047 025">
                 <span className=" select-none">Phone:</span> +420 606 047 025
-              </span>
+              </a>
             </div>
           </div>
         </div>
