@@ -138,22 +138,23 @@ const Contact = () => {
           <h1 className="text-4xl sm:text-5xl font-bold leading-tighter tracking-tighter text-center mb-10 w-full">
             Contact Me<span className="text-white">.</span>
           </h1>
-          <div className="flex  pl-5 gap-5 flex-col w-full">
-            <div className="flex justify-center items-center gap-5">
-              <div className="bg-white/20 rounded-full p-3 flex justify-center items-center max-[420px]:hidden ">
+          <div className="flex  p-5 gap-5 flex-col w-full ">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+              <div className="bg-white/20 rounded-full p-3 flex justify-center items-center  ">
                 <SiMinutemailer />
               </div>
-              <a href="mailto:nicolas.melda@icloud.com">
-                <span className=" select-none">Email:</span>{" "}
+              <a className="flex" href="mailto:nicolas.melda@icloud.com">
+                <span className=" select-none hidden sm:flex">Email:</span>{" "}
                 nicolas.melda@icloud.com
               </a>
             </div>
-            <div className="flex justify-center max-[500px]:justify-normal  items-center gap-5 ">
-              <div className="bg-white/20 rounded-full p-3 flex justify-center items-center max-[420px]:hidden">
+            <div className="flex flex-col sm:flex-row justify-center max-[500px]:justify-normal  items-center gap-5 ">
+              <div className="bg-white/20 rounded-full p-3 flex justify-center items-center ">
                 <AiFillPhone />
               </div>
-              <a href="tel:606 047 025">
-                <span className=" select-none">Phone:</span> +420 606 047 025
+              <a className="flex" href="tel:606 047 025">
+                <span className=" select-none hidden sm:flex">Phone:</span> +420
+                606 047 025
               </a>
             </div>
           </div>

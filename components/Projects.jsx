@@ -97,87 +97,91 @@ const Projects = () => {
                       alt={project.name}
                       className="rounded-md border-transparent outline-none    pb-5"
                     />
-                    <h2 className=" font-semibold text-2xl px-6  sm:mb-[70px] mb-5">
-                      {project.name}
-                    </h2>
-                    <div className="flex flex-wrap  gap-5 justify-center items-center pb-5 ">
-                      <Button
-                        asChild
-                        className=" hover:scale-105 transition-transform ease duration-200  text-white border-none outline-none"
-                      >
-                        <motion.a
-                          initial={{ backgroundColor: "#dbc1ac" }}
-                          whileHover={{ backgroundColor: project.color }}
-                          transition={{ duration: 0.2 }}
-                          href={project.url}
-                          target="_blank"
+                    <div className="p-1">
+                      <h2 className=" font-semibold text-2xl px-6  sm:mb-[70px] mb-5">
+                        {project.name}
+                      </h2>
+                      <div className="flex flex-wrap  gap-5 justify-center items-center pb-5 ">
+                        <Button
+                          asChild
+                          className=" hover:scale-105 transition-transform ease duration-200  text-white border-none outline-none"
                         >
-                          Live Demo
-                        </motion.a>
-                      </Button>
-
-                      <Dialog className="w-[200px] h-[200px] ">
-                        <DialogTrigger asChild>
-                          <Button
-                            asChild
-                            className="hover:scale-105 cursor-pointer transition-transform ease duration-200  text-white border-none outline-none"
+                          <motion.a
+                            initial={{ backgroundColor: "#dbc1ac" }}
+                            whileHover={{ backgroundColor: project.color }}
+                            transition={{ duration: 0.2 }}
+                            href={project.url}
+                            target="_blank"
                           >
-                            <motion.span
-                              initial={{ backgroundColor: "#dbc1ac" }}
-                              whileHover={{ backgroundColor: project.color }}
-                              transition={{ duration: 0.2 }}
+                            Live Demo
+                          </motion.a>
+                        </Button>
+
+                        <Dialog className="w-[200px] h-[200px] ">
+                          <DialogTrigger asChild>
+                            <Button
+                              asChild
+                              className="hover:scale-105 cursor-pointer transition-transform ease duration-200  text-white border-none outline-none"
                             >
-                              View More
-                            </motion.span>
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="rounded-lg w-[80%] sm:w-full">
-                          <DialogHeader className="flex justify-center items-center gap-3 flex-col w-full">
-                            <Image
-                              placeholder="blur"
-                              src={project.image}
-                              className=" w-full rounded-md shadow-lg  my-4 "
-                            />
-                            <DialogTitle className="text-black text-2xl w-full  text-center ">
-                              {project.name}
-                            </DialogTitle>
-                            <DialogDescription className="text-center">
-                              {project.desc.split("").map((letter, i) => (
-                                <motion.span
-                                  initial={{
-                                    opacity: 0,
-                                    y: -100,
-                                  }}
-                                  whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                      duration: 0.1,
-                                      delay: 0.0055 * i,
-                                    },
-                                  }}
-                                  key={i}
-                                >
-                                  {letter}
-                                </motion.span>
-                              ))}
-                            </DialogDescription>
-                          </DialogHeader>
-                          <DialogFooter className="mt-3 w-full">
-                            <Button asChild className="text-white">
-                              <motion.a
+                              <motion.span
                                 initial={{ backgroundColor: "#dbc1ac" }}
                                 whileHover={{ backgroundColor: project.color }}
                                 transition={{ duration: 0.2 }}
-                                href={project.git}
-                                target="_blank"
                               >
-                                View source code
-                              </motion.a>
+                                View More
+                              </motion.span>
                             </Button>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
+                          </DialogTrigger>
+                          <DialogContent className="rounded-lg w-[80%] sm:w-full">
+                            <DialogHeader className="flex justify-center items-center gap-3 flex-col w-full">
+                              <Image
+                                placeholder="blur"
+                                src={project.image}
+                                className=" w-full rounded-md shadow-lg  my-4 "
+                              />
+                              <DialogTitle className="text-black text-2xl w-full  text-center ">
+                                {project.name}
+                              </DialogTitle>
+                              <DialogDescription className="text-center">
+                                {project.desc.split("").map((letter, i) => (
+                                  <motion.span
+                                    initial={{
+                                      opacity: 0,
+                                      y: -100,
+                                    }}
+                                    whileInView={{
+                                      opacity: 1,
+                                      y: 0,
+                                      transition: {
+                                        duration: 0.1,
+                                        delay: 0.0055 * i,
+                                      },
+                                    }}
+                                    key={i}
+                                  >
+                                    {letter}
+                                  </motion.span>
+                                ))}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <DialogFooter className="mt-3 w-full">
+                              <Button asChild className="text-white">
+                                <motion.a
+                                  initial={{ backgroundColor: "#dbc1ac" }}
+                                  whileHover={{
+                                    backgroundColor: project.color,
+                                  }}
+                                  transition={{ duration: 0.2 }}
+                                  href={project.git}
+                                  target="_blank"
+                                >
+                                  View source code
+                                </motion.a>
+                              </Button>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
