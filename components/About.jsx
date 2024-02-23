@@ -13,7 +13,7 @@ const About = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="text-5xl font-bold leading-tighter tracking-tighter mt-8"
+        className="text-5xl font-bold leading-tighter tracking-tighter my-8"
       >
         About Me<span className="text-white ">.</span>
       </motion.h1>
