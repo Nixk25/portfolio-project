@@ -13,6 +13,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const { scrollY } = useScroll();
 
@@ -44,7 +45,7 @@ const Navbar = () => {
       {navLinks.map((link, i) => (
         <a
           key={i}
-          className="links bg-transparent hover:bg-secondary hover:text-text duration-200 ease p-2 px-3 rounded-2xl cursor-pointer"
+          className="p-2 px-3 duration-200 bg-transparent cursor-pointer links hover:bg-secondary hover:text-text ease rounded-2xl"
           href={link.href}
         >
           {link.title}

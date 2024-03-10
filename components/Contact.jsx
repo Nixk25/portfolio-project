@@ -46,20 +46,20 @@ const Contact = () => {
       id="contact"
       className="mb-[100px] flex justify-center items-center flex-col rounded-lg container"
     >
-      <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
+      <h1 className="w-full my-10 text-5xl font-bold tracking-tighter text-center leading-tighter">
         Get in touch<span className="text-white">.</span>
       </h1>
       <div className="flex  justify-center items-center  w-full  mt-[100px] flex-col gap-10">
         <div className=" w-[80%]">
           <form
-            className="flex flex-col flex-wrap justify-center items-center gap-5 w-full"
+            className="flex flex-col flex-wrap items-center justify-center w-full gap-5"
             ref={form}
             onSubmit={sendEmail}
           >
-            <div className="flex flex-col sm:flex-row justify-evenly items-center gap-5  w-full">
-              <div className=" flex gap-2 justify-center items-center w-full">
+            <div className="flex flex-col items-center w-full gap-5 sm:flex-row justify-evenly">
+              <div className="flex items-center justify-center w-full gap-2 ">
                 <input
-                  className="p-3 border-none text-black rounded-lg focus:outline-primary w-full "
+                  className="w-full p-3 text-black border-none rounded-lg focus:outline-primary "
                   type="text"
                   name="user_name"
                   placeholder="Your Name.."
@@ -70,9 +70,9 @@ const Contact = () => {
                   }}
                 />
               </div>
-              <div className=" flex gap-2 justify-center items-center w-full">
+              <div className="flex items-center justify-center w-full gap-2 ">
                 <input
-                  className="p-3 border-none text-black rounded-lg focus:outline-primary w-full "
+                  className="w-full p-3 text-black border-none rounded-lg focus:outline-primary "
                   type="email"
                   name="user_email"
                   placeholder="Your Email.."
@@ -85,9 +85,9 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className=" flex gap-2 justify-center items-center w-full">
+            <div className="flex items-center justify-center w-full gap-2 ">
               <input
-                className="p-3 border-none text-black rounded-lg focus:outline-primary w-full "
+                className="w-full p-3 text-black border-none rounded-lg focus:outline-primary "
                 type="text"
                 name="subject"
                 placeholder="Subject"
@@ -99,9 +99,9 @@ const Contact = () => {
               />
             </div>
 
-            <div className=" w-full flex gap-2 justify-center items-center">
+            <div className="flex items-center justify-center w-full gap-2 ">
               <textarea
-                className="p-3 border-none w-full text-black rounded-lg focus:outline-primary "
+                className="w-full p-3 text-black border-none rounded-lg focus:outline-primary "
                 name="message"
                 placeholder="Write me some message.."
                 required
@@ -135,25 +135,25 @@ const Contact = () => {
           </form>
         </div>
         <div className=" w-[80%] bg-primary rounded-lg overflow-hidden   p-7 text-black contact-card ">
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tighter tracking-tighter text-center mb-10 w-full">
+          <h1 className="w-full mb-10 text-4xl font-bold tracking-tighter text-center sm:text-5xl leading-tighter">
             Contact Me<span className="text-white">.</span>
           </h1>
-          <div className="flex  p-5 gap-5 flex-col w-full ">
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
-              <div className="bg-white/20 rounded-full p-3 flex justify-center items-center  ">
+          <div className="flex flex-col w-full gap-5 p-5 ">
+            <div className="flex flex-col items-center justify-center gap-5 sm:flex-row">
+              <div className="flex items-center justify-center p-3 rounded-full bg-white/20 ">
                 <SiMinutemailer />
               </div>
               <a className="flex" href="mailto:nicolas.melda@icloud.com">
-                <span className=" select-none hidden sm:flex">Email:</span>{" "}
+                <span className="hidden select-none sm:flex">Email:</span>{" "}
                 nicolas.melda@icloud.com
               </a>
             </div>
             <div className="flex flex-col sm:flex-row justify-center max-[500px]:justify-normal  items-center gap-5 ">
-              <div className="bg-white/20 rounded-full p-3 flex justify-center items-center ">
+              <div className="flex items-center justify-center p-3 rounded-full bg-white/20 ">
                 <AiFillPhone />
               </div>
               <a className="flex" href="tel:606 047 025">
-                <span className=" select-none hidden sm:flex">Phone:</span> +420
+                <span className="hidden select-none sm:flex">Phone:</span> +420
                 606 047 025
               </a>
             </div>

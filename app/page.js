@@ -10,11 +10,11 @@ import Circles from "@/components/Circles";
 
 export default function Home() {
   return (
-    <main className=" overflow-hidden mt-24 w-full relative cont ">
+    <main className="relative w-full mt-24 overflow-hidden  cont">
       <Navbar />
       <Menu />
       <Hero />
-      <Circles/>
+      <Circles />
       <About />
       <Skills />
       <Projects />
