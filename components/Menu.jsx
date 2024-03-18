@@ -137,7 +137,7 @@ const NavLink = ({ title, href, toggleMenu }) => {
   };
   return (
     <motion.div variants={navLinkVariants} onClick={toggleMenu}>
-      <Link href={href}>{title}</Link>
+      <a href={href}>{title}</a>
     </motion.div>
   );
 };
