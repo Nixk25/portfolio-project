@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   {
     title: "Home",
