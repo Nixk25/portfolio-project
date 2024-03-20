@@ -13,6 +13,8 @@ import {
   SiSvelte,
   SiTypescript,
   SiOracle,
+  SiMongodb,
+  SiNodedotjs,
 } from "react-icons/si";
 
 const technologies = [
@@ -78,15 +80,25 @@ const technologies = [
     color: "#F40F13",
     icon: <SiOracle />,
   },
+  {
+    name: "Node.js",
+    color: "#7CB702",
+    icon: <SiNodedotjs />,
+  },
+  {
+    name: "Mongo DB",
+    color: "#00684A",
+    icon: <SiMongodb />,
+  },
 ];
 
 const Skills = () => {
   return (
     <section id="skills" className="my-[150px]">
-      <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
+      <h1 className="w-full my-10 text-5xl font-bold tracking-tighter text-center leading-tighter">
         Skills<span className="text-white">.</span>
       </h1>
-      <div className="flex gap-10  flex-wrap justify-center items-center ">
+      <div className="flex flex-wrap items-center justify-center gap-10 ">
         {technologies.map((technology, i) => (
           <TiltingCard
             key={i}

@@ -20,10 +20,11 @@ const About = () => {
       >
         About Me<span className="text-white ">.</span>
       </motion.h1>
+      <p className="mb-5">Hover me to see magic !</p>
       <MaskContainer
-        revealSize={300}
+        revealSize={200}
         revealText={
-          <p className="text-lg font-bold text-center text-white  md:text-slate-800 md:text-4xl">
+          <p className="text-lg font-bold text-center text-white md:text-slate-400 md:text-4xl">
             Hi, I'm Nicolas, your future Front-End developer and passionate
             student from the heart of Europe! I'm currently immersed in the
             world of web technologies at university in Pardubice. For me,
@@ -35,14 +36,14 @@ const About = () => {
         }
         className="hidden text-center rounded-md h-max md:flex"
       >
-        Hi, I'm Nicolas, your{" "}
-        <span className="text-primary">hopefully new</span> Front-End developer
-        and <span className="text-primary">haha no</span> student from the heart
-        of Europe! I'm currently in the world of web technologies at university
-        in Pardubice. For me, programming is not just a job, it's a lifestyle
-        and also my cause of <span className="text-primary">i love it</span>. My
-        path at university gives me a solid foundation in the web world, which I
-        combine with my passion for React.js and creativity.
+        Hi, I'm Nicolas, your <span className="text-primary">hopefully</span>{" "}
+        Front-End developer and <span className="text-primary">haha no</span>{" "}
+        student from the heart of Europe! I'm currently immersed in the world of
+        web technologies at university in Pardubice. For me, programming is not
+        just a job, it's a lifestyle and also my cause of{" "}
+        <span className="text-primary">best thing about it</span>. My path at
+        university gives me a solid foundation in the web world, which I combine
+        with my passion for React.js and creativity.
       </MaskContainer>
       <motion.p
         initial={{ opacity: 0 }}

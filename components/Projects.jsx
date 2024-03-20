@@ -6,6 +6,7 @@ import Brewtique from "../public/brewtique.png";
 import Cars from "../public/cars.png";
 import Vyziva from "../public/vyziva.png";
 import HouseFix from "../public/housefix.png";
+import cookifyImg from "../public/cookify.png";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import {
@@ -38,7 +39,7 @@ const projects = [
   },
   {
     name: "TNR-Band",
-    desc: "TNR-Band, my recent commercial project, harmonizes Next.js, Tailwind CSS, and Shadcn for a visually captivating musical experience. This tech ensemble ensures not only technical finesse but also injects humor, making TNR-Band a delightful hit for users.",
+    desc: "TNR-Band, my recent commercial project, harmonizes Next.js, Next-auth, MongoDB, Node.js, Tailwind CSS, Shadcn. After login you can add, remove or edit concerts, also concerts are automatically transfered to previous concerts. Login is hidden because only admin can use it.",
     image: tnrb,
     url: "https://tnr-band.vercel.app/",
     git: "https://github.com/Nixk25/Eda",
@@ -71,9 +72,11 @@ const projects = [
 ];
 
 const Projects = () => {
+  const cookifyDesc =
+    "Cookify is a web application designed for culinary enthusiasts. It’s built using a robust tech stack that includes Next.js, Tailwind CSS, Node.js, MongoDB, and NextAuth.js. The application serves as a platform for users to explore, modify, and manage cooking recipes. It offers a user-friendly interface where users can view individual recipes in detail. Users can also add their favorite recipes to a personalized collection for easy access. One of the key features of Cookify is its user management system. It allows users to register and log in to their accounts, providing a personalized experience for each user. In the near future, Cookify will be available online.";
   return (
     <section id="projects" className="mb-[100px] sm:p-0 px-10 container ">
-      <h1 className="text-5xl font-bold leading-tighter tracking-tighter text-center my-10 w-full">
+      <h1 className="w-full my-10 text-5xl font-bold tracking-tighter text-center leading-tighter">
         Projects<span className="text-white">.</span>
       </h1>
       <Carousel
@@ -83,28 +86,129 @@ const Projects = () => {
         className="w-full max-w-[80%]  m-auto "
       >
         <CarouselContent>
+          <CarouselItem className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4 ">
+            <div className="p-1">
+              <Card className="rounded-md ">
+                <CardContent className="flex flex-col items-center justify-center p-0 text-center ">
+                  <div className="relative mb-5">
+                    <div className="absolute inset-0 w-full h-full pb-5 border-none rounded-md outline-none bg-black/70" />
+                    <span className="absolute text-3xl font-bold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
+                      Comming soon..
+                    </span>
+                    <Image
+                      placeholder="blur"
+                      src={cookifyImg}
+                      alt="Cookify"
+                      className="object-cover border-transparent rounded-md outline-none"
+                    />
+                  </div>
+                  <div className="p-1">
+                    <h2 className="px-6 mb-5 text-2xl font-semibold ">
+                      Cookify
+                    </h2>
+                    <p className="sm:max-w-[400px] sm:block hidden whitespace-nowrap mb-5 overflow-hidden text-ellipsis ">
+                      {cookifyDesc}
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-5 pb-5 ">
+                      <Button
+                        asChild
+                        className="text-white transition-transform duration-200 border-none outline-none hover:scale-105 ease"
+                      ></Button>
+
+                      <Dialog className="w-[200px] h-[200px]  ">
+                        <DialogTrigger asChild>
+                          <Button
+                            asChild
+                            className="text-white transition-transform duration-200 border-none outline-none cursor-pointer hover:scale-105 ease"
+                          >
+                            <motion.span
+                              initial={{ backgroundColor: "#dbc1ac" }}
+                              whileHover={{ backgroundColor: "#57C2A9" }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              View More
+                            </motion.span>
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="border-4 overflow-y-auto max-h-[70%] border-[#57C2A9]  rounded-lg w-[80%] sm:w-full">
+                          <DialogHeader className="flex flex-col items-center justify-center w-full gap-3">
+                            <Image
+                              placeholder="blur"
+                              src={cookifyImg}
+                              className="w-full my-4 rounded-md shadow-lg "
+                            />
+                            <DialogTitle className="w-full text-[#57C2A9] text-2xl text-center font-bold ">
+                              Cookify
+                            </DialogTitle>
+                            <DialogDescription className="text-center">
+                              {cookifyDesc.split("").map((letter, i) => (
+                                <motion.span
+                                  initial={{
+                                    opacity: 0,
+                                    y: -100,
+                                  }}
+                                  whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                      duration: 0.1,
+                                      delay: 0.0055 * i,
+                                    },
+                                  }}
+                                  viewport={{ once: true }}
+                                  key={i}
+                                >
+                                  {letter}
+                                </motion.span>
+                              ))}
+                            </DialogDescription>
+                          </DialogHeader>
+                          <DialogFooter className="w-full mt-3">
+                            <Button asChild className="text-white">
+                              <a
+                                className="bg-[#57C2A9]"
+                                href="https://github.com/Nixk25/rocnikovy-projekt"
+                                target="_blank"
+                              >
+                                View source code
+                              </a>
+                            </Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
           {projects.map((project, i) => (
             <CarouselItem
               key={i}
-              className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4  "
+              className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4 "
             >
               <div className="p-1">
-                <Card className="  rounded-md ">
-                  <CardContent className="flex flex-col items-center justify-center text-center p-0 ">
-                    <Image
-                      placeholder="blur"
-                      src={project.image}
-                      alt={project.name}
-                      className="rounded-md border-transparent outline-none    pb-5"
-                    />
+                <Card className="rounded-md ">
+                  <CardContent className="flex flex-col items-center justify-center p-0 text-center ">
+                    <div className="h-1/2">
+                      <Image
+                        placeholder="blur"
+                        src={project.image}
+                        alt={project.name}
+                        className="object-cover h-full pb-5 border-transparent rounded-md outline-none"
+                      />
+                    </div>
                     <div className="p-1">
-                      <h2 className=" font-semibold text-2xl px-6  sm:mb-[70px] mb-5">
+                      <h2 className="px-6 mb-5 text-2xl font-semibold ">
                         {project.name}
                       </h2>
-                      <div className="flex flex-wrap  gap-5 justify-center items-center pb-5 ">
+                      <p className="sm:max-w-[400px] sm:block hidden whitespace-nowrap mb-5 overflow-hidden text-ellipsis ">
+                        {project.desc}
+                      </p>
+                      <div className="flex flex-wrap items-center justify-center gap-5 pb-5 ">
                         <Button
                           asChild
-                          className=" hover:scale-105 transition-transform ease duration-200  text-white border-none outline-none"
+                          className="text-white transition-transform duration-200 border-none outline-none hover:scale-105 ease"
                         >
                           <motion.a
                             initial={{ backgroundColor: "#dbc1ac" }}
@@ -121,7 +225,7 @@ const Projects = () => {
                           <DialogTrigger asChild>
                             <Button
                               asChild
-                              className="hover:scale-105 cursor-pointer transition-transform ease duration-200  text-white border-none outline-none"
+                              className="text-white transition-transform duration-200 border-none outline-none cursor-pointer hover:scale-105 ease"
                             >
                               <motion.span
                                 initial={{ backgroundColor: "#dbc1ac" }}
@@ -132,14 +236,20 @@ const Projects = () => {
                               </motion.span>
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="rounded-lg w-[80%] sm:w-full">
-                            <DialogHeader className="flex justify-center items-center gap-3 flex-col w-full">
+                          <DialogContent
+                            className="border-4 rounded-lg w-[80%] sm:w-full overflow-y-auto max-h-[70%]"
+                            style={{ borderColor: project.color }}
+                          >
+                            <DialogHeader className="flex flex-col items-center justify-center w-full gap-3">
                               <Image
                                 placeholder="blur"
                                 src={project.image}
-                                className=" w-full rounded-md shadow-lg  my-4 "
+                                className="w-full my-4 rounded-md shadow-lg "
                               />
-                              <DialogTitle className="text-black text-2xl w-full  text-center ">
+                              <DialogTitle
+                                className="w-full text-2xl font-bold text-center "
+                                style={{ color: project.color }}
+                              >
                                 {project.name}
                               </DialogTitle>
                               <DialogDescription className="text-center">
@@ -164,19 +274,15 @@ const Projects = () => {
                                 ))}
                               </DialogDescription>
                             </DialogHeader>
-                            <DialogFooter className="mt-3 w-full">
+                            <DialogFooter className="w-full mt-3">
                               <Button asChild className="text-white">
-                                <motion.a
-                                  initial={{ backgroundColor: "#dbc1ac" }}
-                                  whileHover={{
-                                    backgroundColor: project.color,
-                                  }}
-                                  transition={{ duration: 0.2 }}
+                                <a
+                                  style={{ backgroundColor: project.color }}
                                   href={project.git}
                                   target="_blank"
                                 >
                                   View source code
-                                </motion.a>
+                                </a>
                               </Button>
                             </DialogFooter>
                           </DialogContent>
@@ -189,8 +295,8 @@ const Projects = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className=" text-black" />
-        <CarouselNext className=" text-black" />
+        <CarouselPrevious className="text-black " />
+        <CarouselNext className="text-black " />
       </Carousel>
     </section>
   );

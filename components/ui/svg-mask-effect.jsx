@@ -34,13 +34,13 @@ export const MaskContainer = ({
   return (
     <motion.div
       ref={containerRef}
-      className={cn("h-screen relative", className)}
+      className={cn("h-screen relative w-full text-start", className)}
       animate={{
-        backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
+        backgroundColor: isHovered ? " slate-900" : "var(--white)",
       }}
     >
       <motion.div
-        className="w-full h-full flex items-center justify-center text-6xl absolute bg-black bg-grid-white/[0.2] text-white [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"
+        className="cursor-none w-full h-full flex items-center justify-center text-6xl absolute bg-black bg-grid-white/[0.2] text-white [mask-image:url(/mask.svg)] [mask-size:40px] [mask-repeat:no-repeat]"
         animate={{
           WebkitMaskPosition: `${mousePosition.x - maskSize / 2}px ${
             mousePosition.y - maskSize / 2
@@ -49,7 +49,7 @@ export const MaskContainer = ({
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
       >
-        <div className="absolute inset-0 bg-black h-full w-full z-0 opacity-50" />
+        <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-80" />
         <div
           onMouseEnter={() => {
             setIsHovered(true);
@@ -57,15 +57,13 @@ export const MaskContainer = ({
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className=" mx-auto text-center text-white  text-lg md:text-4xl font-bold relative z-20"
+          className="relative z-20 mx-auto text-lg font-bold text-white md:text-4xl"
         >
           {children}
         </div>
       </motion.div>
 
-      <div className="w-full h-full flex items-center justify-center  text-white">
-        {revealText}
-      </div>
+      <div className="flex justify-start text-white ">{revealText}</div>
     </motion.div>
   );
 };
