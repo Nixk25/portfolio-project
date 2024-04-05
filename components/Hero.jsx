@@ -10,6 +10,8 @@ import { Button } from "./ui/button";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import HeroText from "./HeroText";
+import { HeroHighlight } from "./ui/hero-highlight";
+
 const icons = [
   {
     name: "Facebook",
@@ -35,10 +37,10 @@ const icons = [
 
 const Hero = () => {
   return (
-    <>
+    <HeroHighlight className="flex items-center justify-start w-full h-full pt-24">
       <section
         id="home"
-        className="bg-background relative z-10 flex flex-col gap-6 min-h-[100vh] overflow-hidden justify-center pb-[150px]  items-center  w-full  container h-"
+        className=" relative z-10 flex flex-col gap-6 min-h-[100vh] overflow-hidden justify-center pb-[150px]  items-center  w-full  container "
       >
         <HeroText />
         <div className="md:flex hidden flex-col gap-5 absolute right-5 top-[50%] translate-y-[-110%]">
@@ -48,7 +50,7 @@ const Hero = () => {
               animate={{ right: 0, scale: 1 }}
               transition={{ duration: i * 0.1 }}
               key={i}
-              className="hover:text-primary  text-text relative text-2xl ease duration-300 cursor-pointer"
+              className="relative text-2xl duration-300 cursor-pointer hover:text-primary text-text ease"
               target="_blank"
               href={icon.href}
             >
@@ -88,7 +90,7 @@ const Hero = () => {
           </Button>
         </motion.div>
       </section>
-    </>
+    </HeroHighlight>
   );
 };
 

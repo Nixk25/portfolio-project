@@ -1,6 +1,6 @@
 "use client";
-
 import React from "react";
+import { LayoutGrid } from "./ui/layout-grid";
 import tnrb from "../public/tnrband.png";
 import Brewtique from "../public/brewtique.png";
 import Cars from "../public/cars.png";
@@ -8,298 +8,227 @@ import Vyziva from "../public/vyziva.png";
 import HouseFix from "../public/housefix.png";
 import cookifyImg from "../public/cookify.png";
 import { Button } from "./ui/button";
-import Image from "next/image";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+const Projects = () => {
+  return (
+    <div className="relative w-full py-20">
+      <motion.h1
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter"
+      >
+        My Projects<span className="text-white ">.</span>
+      </motion.h1>
+      <LayoutGrid cards={cards} />
+    </div>
+  );
+};
 
-const projects = [
+const SkeletonOne = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">Cookify</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        Cookify is a web application designed for culinary enthusiasts. It’s
+        built using a robust tech stack that includes Next.js, Tailwind CSS,
+        Node.js, MongoDB, and NextAuth.js. The application serves as a platform
+        for users to explore, modify, and manage cooking recipes. It offers a
+        user-friendly interface where users can view individual recipes in
+        detail. Users can also add their favorite recipes to a personalized
+        collection for easy access. One of the key features of Cookify is its
+        user management system. It allows users to register and log in to their
+        accounts, providing a personalized experience for each user.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://coookify.vercel.app" target="_blank">
+          <Button className="bg-[#57C2A9] text-white">Live Demo</Button>
+        </Link>
+        <Link
+          href="https://github.com/Nixk25/rocnikovy-projekt"
+          target="_blank"
+        >
+          <Button className="bg-[#57C2A9] text-white" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const SkeletonTwo = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">TNR-Band</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        TNR-Band, my recent commercial project, harmonizes Next.js, Next-auth,
+        MongoDB, Node.js, Tailwind CSS, Shadcn. After login you can add, remove
+        or edit concerts, also concerts are automatically transfered to previous
+        concerts. Login is hidden because only admin can use it.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://tnr-band.vercel.app" target="_blank">
+          <Button className="bg-[#FF930F]">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/Eda" target="_blank">
+          <Button className="bg-[#FF930F] text-black" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+const SkeletonThree = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">Rentopia</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        Rentopia is a web application developed using a modern framework for
+        React.js called Next.js. The application is used to view information
+        about different types of cars, and the data is retrieved through an API.
+        The project is built on HTML5, JavaScript, Next.js and Tailwind CSS,
+        which provides a modern and responsive user interface.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://car-webpage.vercel.app/" target="_blank">
+          <Button className="bg-[#8ACFF1]">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/car_webpage" target="_blank">
+          <Button className="bg-[#8ACFF1] text-black" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+const SkeletonFour = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">Brewtique</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        Brewtique is a website developed using HTML5, CSS3 and React.js. This
+        website serves as a virtual space for an imaginary cafe called
+        Brewtique. Users can browse through a menu of coffee and other
+        delicacies.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://brewtique.netlify.app" target="_blank">
+          <Button className="bg-[#d6873d]">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/Coffee-Shop" target="_blank">
+          <Button className="bg-[#d6873d] text-black" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+const SkeletonFive = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">
+        Nutritional counselling Lucie
+      </h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        Nutrition Lucie is a web-based eshop that combines the functions of an
+        online store with nutritional information elements. This project was
+        developed using HTML5, CSS3, React.js, Stripe and Commerce.js. Nutrition
+        Lucie offers users the opportunity to shop for nutritional products and
+        get relevant information regarding proper nutrition.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://nutritionallucie.netlify.app" target="_blank">
+          <Button className="bg-[#e18cbd] text-white">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/Vyziva" target="_blank">
+          <Button className="bg-[#e18cbd] text-white" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+const SkeletonSix = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">HouseFix</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        HouseFix is my first web project, which was created as a site for an
+        imaginary construction company. The project uses basic technologies
+        including HTML5, CSS3 and animate.css. This website is used to showcase
+        a fictional construction company and its services.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://nixk25.github.io/build" target="_blank">
+          <Button className="bg-[#f9d546] text-white">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/build" target="_blank">
+          <Button className="bg-[#f9d546] text-white" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const cards = [
   {
-    name: "Rentopia",
-    desc: "Rentopia is a web application developed using a modern framework for React.js called Next.js. The application is used to view information about different types of cars, and the data is retrieved through an API. The project is built on HTML5, JavaScript, Next.js and Tailwind CSS, which provides a modern and responsive user interface.",
-    image: Cars,
-    url: "https://car-webpage.vercel.app/",
-    git: "https://github.com/Nixk25/car_webpage",
-    color: "#8ACFF1",
+    id: 1,
+    content: <SkeletonOne />,
+    className: "md:col-span-2 min-h-[100px]",
+    thumbnail: cookifyImg,
+    color: "#57C2A9",
   },
   {
-    name: "TNR-Band",
-    desc: "TNR-Band, my recent commercial project, harmonizes Next.js, Next-auth, MongoDB, Node.js, Tailwind CSS, Shadcn. After login you can add, remove or edit concerts, also concerts are automatically transfered to previous concerts. Login is hidden because only admin can use it.",
-    image: tnrb,
-    url: "https://tnr-band.vercel.app/",
-    git: "https://github.com/Nixk25/Eda",
+    id: 2,
+    content: <SkeletonTwo />,
+    className: "col-span-1 min-h-[100px]",
+    thumbnail: tnrb,
     color: "#FF930F",
   },
   {
-    name: "Brewtique",
-    desc: "Brewtique is a website developed using HTML5, CSS3 and React.js. This website serves as a virtual space for an imaginary cafe called Brewtique. Users can browse through a menu of coffee and other delicacies.",
-    image: Brewtique,
-    url: "https://brewtique.netlify.app/",
-    git: "https://github.com/Nixk25/Coffee-Shop",
-    color: "#d6873d",
+    id: 3,
+    content: <SkeletonThree />,
+    className: "col-span-1 min-h-[100px]",
+    thumbnail: Cars,
+    color: "#8ACFF1",
   },
   {
-    name: "Nutritional counselling Lucie",
-    desc: "Nutrition Lucie is a web-based eshop that combines the functions of an online store with nutritional information elements. This project was developed using HTML5, CSS3, React.js, Stripe and Commerce.js. Nutrition Lucie offers users the opportunity to shop for nutritional products and get relevant information regarding proper nutrition. ",
-    image: Vyziva,
-    url: "https://nutritionallucie.netlify.app/",
-    git: "https://github.com/Nixk25/Vyziva",
+    id: 4,
+    content: <SkeletonFour />,
+    className: "md:col-span-2 min-h-[100px]",
+    thumbnail: Brewtique,
+    color: "#d6873d",
+  },
+
+  {
+    id: 5,
+    content: <SkeletonFive />,
+    className: "md:col-span-2 min-h-[100px]",
+    thumbnail: Vyziva,
     color: "#e18cbd",
   },
   {
-    name: "HouseFix",
-    desc: "HouseFix is my first web project, which was created as a site for an imaginary construction company. The project uses basic technologies including HTML5, CSS3 and animate.css. This website is used to showcase a fictional construction company and its services.",
-    image: HouseFix,
-    url: "https://nixk25.github.io/build/",
-    git: "https://github.com/Nixk25/build",
+    id: 6,
+    content: <SkeletonSix />,
+    className: "col-span-1 min-h-[100px]",
+    thumbnail: HouseFix,
     color: "#f9d546",
   },
 ];
-
-const Projects = () => {
-  const cookifyDesc =
-    "Cookify is a web application designed for culinary enthusiasts. It’s built using a robust tech stack that includes Next.js, Tailwind CSS, Node.js, MongoDB, and NextAuth.js. The application serves as a platform for users to explore, modify, and manage cooking recipes. It offers a user-friendly interface where users can view individual recipes in detail. Users can also add their favorite recipes to a personalized collection for easy access. One of the key features of Cookify is its user management system. It allows users to register and log in to their accounts, providing a personalized experience for each user. In the near future, Cookify will be available online.";
-  return (
-    <section id="projects" className="mb-[100px] sm:p-0 px-10 container ">
-      <h1 className="w-full my-10 text-5xl font-bold tracking-tighter text-center leading-tighter">
-        Projects<span className="text-white">.</span>
-      </h1>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full max-w-[80%]  m-auto "
-      >
-        <CarouselContent>
-          <CarouselItem className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4 ">
-            <div className="p-1">
-              <Card className="rounded-md ">
-                <CardContent className="flex flex-col items-center justify-center p-0 text-center ">
-                  <div className="relative mb-5">
-                    <div className="absolute inset-0 w-full h-full pb-5 border-none rounded-md outline-none bg-black/70" />
-                    <span className="absolute text-3xl font-bold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ">
-                      Comming soon..
-                    </span>
-                    <Image
-                      placeholder="blur"
-                      src={cookifyImg}
-                      alt="Cookify"
-                      className="object-cover border-transparent rounded-md outline-none"
-                    />
-                  </div>
-                  <div className="p-1">
-                    <h2 className="px-6 mb-5 text-2xl font-semibold ">
-                      Cookify
-                    </h2>
-                    <p className="sm:max-w-[400px] sm:block hidden whitespace-nowrap mb-5 overflow-hidden text-ellipsis ">
-                      {cookifyDesc}
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center gap-5 pb-5 ">
-                      <Button
-                        asChild
-                        className="text-white transition-transform duration-200 border-none outline-none hover:scale-105 ease"
-                      ></Button>
-
-                      <Dialog className="w-[200px] h-[200px]  ">
-                        <DialogTrigger asChild>
-                          <Button
-                            asChild
-                            className="text-white transition-transform duration-200 border-none outline-none cursor-pointer hover:scale-105 ease"
-                          >
-                            <motion.span
-                              initial={{ backgroundColor: "#dbc1ac" }}
-                              whileHover={{ backgroundColor: "#57C2A9" }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              View More
-                            </motion.span>
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="border-4 overflow-y-auto max-h-[70%] border-[#57C2A9]  rounded-lg w-[80%] sm:w-full">
-                          <DialogHeader className="flex flex-col items-center justify-center w-full gap-3">
-                            <Image
-                              placeholder="blur"
-                              src={cookifyImg}
-                              className="w-full my-4 rounded-md shadow-lg "
-                            />
-                            <DialogTitle className="w-full text-[#57C2A9] text-2xl text-center font-bold ">
-                              Cookify
-                            </DialogTitle>
-                            <DialogDescription className="text-center">
-                              {cookifyDesc.split("").map((letter, i) => (
-                                <motion.span
-                                  initial={{
-                                    opacity: 0,
-                                    y: -100,
-                                  }}
-                                  whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                      duration: 0.1,
-                                      delay: 0.0055 * i,
-                                    },
-                                  }}
-                                  viewport={{ once: true }}
-                                  key={i}
-                                >
-                                  {letter}
-                                </motion.span>
-                              ))}
-                            </DialogDescription>
-                          </DialogHeader>
-                          <DialogFooter className="w-full mt-3">
-                            <Button asChild className="text-white">
-                              <a
-                                className="bg-[#57C2A9]"
-                                href="https://github.com/Nixk25/rocnikovy-projekt"
-                                target="_blank"
-                              >
-                                View source code
-                              </a>
-                            </Button>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-          {projects.map((project, i) => (
-            <CarouselItem
-              key={i}
-              className="md:basis-1/2 cursor-grab 2xl:basis-1/3 3xl:basis-1/4 "
-            >
-              <div className="p-1">
-                <Card className="rounded-md ">
-                  <CardContent className="flex flex-col items-center justify-center p-0 text-center ">
-                    <div className="h-1/2">
-                      <Image
-                        placeholder="blur"
-                        src={project.image}
-                        alt={project.name}
-                        className="object-cover h-full pb-5 border-transparent rounded-md outline-none"
-                      />
-                    </div>
-                    <div className="p-1">
-                      <h2 className="px-6 mb-5 text-2xl font-semibold ">
-                        {project.name}
-                      </h2>
-                      <p className="sm:max-w-[400px] sm:block hidden whitespace-nowrap mb-5 overflow-hidden text-ellipsis ">
-                        {project.desc}
-                      </p>
-                      <div className="flex flex-wrap items-center justify-center gap-5 pb-5 ">
-                        <Button
-                          asChild
-                          className="text-white transition-transform duration-200 border-none outline-none hover:scale-105 ease"
-                        >
-                          <motion.a
-                            initial={{ backgroundColor: "#dbc1ac" }}
-                            whileHover={{ backgroundColor: project.color }}
-                            transition={{ duration: 0.2 }}
-                            href={project.url}
-                            target="_blank"
-                          >
-                            Live Demo
-                          </motion.a>
-                        </Button>
-
-                        <Dialog className="w-[200px] h-[200px] ">
-                          <DialogTrigger asChild>
-                            <Button
-                              asChild
-                              className="text-white transition-transform duration-200 border-none outline-none cursor-pointer hover:scale-105 ease"
-                            >
-                              <motion.span
-                                initial={{ backgroundColor: "#dbc1ac" }}
-                                whileHover={{ backgroundColor: project.color }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                View More
-                              </motion.span>
-                            </Button>
-                          </DialogTrigger>
-                          <DialogContent
-                            className="border-4 rounded-lg w-[80%] sm:w-full overflow-y-auto max-h-[70%]"
-                            style={{ borderColor: project.color }}
-                          >
-                            <DialogHeader className="flex flex-col items-center justify-center w-full gap-3">
-                              <Image
-                                placeholder="blur"
-                                src={project.image}
-                                className="w-full my-4 rounded-md shadow-lg "
-                              />
-                              <DialogTitle
-                                className="w-full text-2xl font-bold text-center "
-                                style={{ color: project.color }}
-                              >
-                                {project.name}
-                              </DialogTitle>
-                              <DialogDescription className="text-center">
-                                {project.desc.split("").map((letter, i) => (
-                                  <motion.span
-                                    initial={{
-                                      opacity: 0,
-                                      y: -100,
-                                    }}
-                                    whileInView={{
-                                      opacity: 1,
-                                      y: 0,
-                                      transition: {
-                                        duration: 0.1,
-                                        delay: 0.0055 * i,
-                                      },
-                                    }}
-                                    key={i}
-                                  >
-                                    {letter}
-                                  </motion.span>
-                                ))}
-                              </DialogDescription>
-                            </DialogHeader>
-                            <DialogFooter className="w-full mt-3">
-                              <Button asChild className="text-white">
-                                <a
-                                  style={{ backgroundColor: project.color }}
-                                  href={project.git}
-                                  target="_blank"
-                                >
-                                  View source code
-                                </a>
-                              </Button>
-                            </DialogFooter>
-                          </DialogContent>
-                        </Dialog>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="text-black " />
-        <CarouselNext className="text-black " />
-      </Carousel>
-    </section>
-  );
-};
 
 export default Projects;

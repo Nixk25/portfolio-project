@@ -10,7 +10,7 @@ import Circles from "@/components/Circles";
 
 export default function Home() {
   return (
-    <main className="relative w-full mt-24 overflow-hidden  cont">
+    <main className="relative w-full overflow-hidden cont">
       <Navbar />
       <Menu />
       <Hero />

@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { AiFillPhone } from "react-icons/ai";
 import { SiMinutemailer } from "react-icons/si";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formValues, setFormValues] = useState({
@@ -46,9 +47,15 @@ const Contact = () => {
       id="contact"
       className="mb-[100px] flex justify-center items-center flex-col rounded-lg container"
     >
-      <h1 className="w-full my-10 text-5xl font-bold tracking-tighter text-center leading-tighter">
-        Get in touch<span className="text-white">.</span>
-      </h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter"
+      >
+        Get in touch<span className="text-white ">.</span>
+      </motion.h1>
       <div className="flex  justify-center items-center  w-full  mt-[100px] flex-col gap-10">
         <div className=" w-[80%]">
           <form

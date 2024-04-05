@@ -16,6 +16,7 @@ import {
   SiMongodb,
   SiNodedotjs,
 } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const technologies = [
   {
@@ -95,9 +96,15 @@ const technologies = [
 const Skills = () => {
   return (
     <section id="skills" className="my-[150px]">
-      <h1 className="w-full my-10 text-5xl font-bold tracking-tighter text-center leading-tighter">
-        Skills<span className="text-white">.</span>
-      </h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter"
+      >
+        My Skills<span className="text-white ">.</span>
+      </motion.h1>
       <div className="flex flex-wrap items-center justify-center gap-10 ">
         {technologies.map((technology, i) => (
           <TiltingCard
