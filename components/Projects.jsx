@@ -12,7 +12,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 const Projects = () => {
   return (
-    <div className="relative w-full py-20">
+    <div id="projects" className="relative w-full py-20">
       <motion.h1
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
