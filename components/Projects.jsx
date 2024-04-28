@@ -33,12 +33,15 @@ const SkeletonOne = () => {
       <h2 className="text-4xl font-bold text-white">Cookify</h2>
 
       <p className="my-4 text-base font-normal text-neutral-200">
-        Cookify is a web application designed for culinary enthusiasts. It’s
+        Cookify is a web application designed for culinary enthusiasts. Try demo{" "}
+        <pre className="mb-2 bg-white/10 w-max">email:admin@example.com</pre>
+        <pre className="mb-2 bg-white/10 w-max">password:adminadmin</pre> It’s
         built using a robust tech stack that includes Next.js, Tailwind CSS,
-        Node.js, MongoDB, and NextAuth.js. The application serves as a platform
-        for users to explore, modify, and manage cooking recipes. It offers a
-        user-friendly interface where users can view individual recipes in
-        detail. Users can also add their favorite recipes to a personalized
+        Node.js, MongoDB, NextAuth.js and OpeanAI API because I want to
+        implement Ai chat that works with my database. The application serves as
+        a platform for users to explore, modify, and manage cooking recipes. It
+        offers a user-friendly interface where users can view individual recipes
+        in detail. Users can also add their favorite recipes to a personalized
         collection for easy access. One of the key features of Cookify is its
         user management system. It allows users to register and log in to their
         accounts, providing a personalized experience for each user.

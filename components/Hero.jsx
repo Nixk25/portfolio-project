@@ -14,22 +14,22 @@ import { HeroHighlight } from "./ui/hero-highlight";
 
 const icons = [
   {
-    name: "Facebook",
+    name: "Sledujte mě na Facebooku",
     icon: <BsFacebook />,
     href: "https://www.facebook.com/nick.melda.7/",
   },
   {
-    name: "Instagram",
+    name: "Sledujte mě na Instagramu",
     icon: <AiFillInstagram />,
     href: "https://www.instagram.com/nickmelda/",
   },
   {
-    name: "Github",
+    name: "Sledujte mě na Githubu",
     icon: <AiFillGithub />,
     href: "https://github.com/Nixk25",
   },
   {
-    name: "LinkedIn",
+    name: "Sledujte mě na LinkedIn",
     icon: <FaLinkedin />,
     href: "https://www.linkedin.com/in/nicolas-melda-424b7224b/",
   },
@@ -58,7 +58,9 @@ const Hero = () => {
                 <HoverCardTrigger asChild>
                   <div>{icon.icon}</div>
                 </HoverCardTrigger>
-                <HoverCardContent>{icon.name}</HoverCardContent>
+                <HoverCardContent className="mr-5">
+                  {icon.name}
+                </HoverCardContent>
               </HoverCard>
             </motion.a>
           ))}
