@@ -11,7 +11,6 @@ import { toast } from "sonner";
 import { motion } from "framer-motion";
 import HeroText from "./HeroText";
 import { HeroHighlight } from "./ui/hero-highlight";
-
 const icons = [
   {
     name: "Sledujte mě na Facebooku",

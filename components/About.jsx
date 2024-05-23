@@ -1,26 +1,61 @@
 "use client";
 
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const About = () => {
-  const aboutText =
-    "Hi, I'm Nicolas, your future Front-End developer and passionate student from the heart of Europe! I'm currently immersed in the world of web technologies at university in Pardubice. For me, programming is not just a job, it's a lifestyle and also my cause of impostorsyndrome. My path at university gives me a solid foundation in the web world, which I combine with my passion for React.js and creativity.";
+export const About = () => {
   return (
-    <section
-      id="about"
-      className="flex flex-col items-center justify-center w-full overflow-hidden text-center h-max"
+    <div className="container bg-black">
+      <TextParallaxContent
+        subheading="Hi, I'm Nicolas, your future Front-End developer and passionate student from the heart of Europe! I'm currently immersed in the world of web technologies at university in Pardubice. For me, programming is not just a job, it's a lifestyle and also my cause of impostorsyndrome. My path at university gives me a solid foundation in the web world, which I combine with my passion for React.js and creativity."
+        heading="About Me."
+      ></TextParallaxContent>
+    </div>
+  );
+};
+
+const IMG_PADDING = 12;
+
+const TextParallaxContent = ({ subheading, heading, children }) => {
+  return (
+    <div
+      style={{
+        paddingLeft: IMG_PADDING,
+        paddingRight: IMG_PADDING,
+      }}
     >
-      <div className="container">
-        <motion.h1
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter"
-        >
-          About me<span className="text-white ">.</span>
-        </motion.h1>
-        {aboutText.split(" ").map((word, i) => (
+      <div className="relative h-[120vh]">
+        <OverlayCopy heading={heading} subheading={subheading} />
+      </div>
+      {children}
+    </div>
+  );
+};
+
+const OverlayCopy = ({ subheading, heading }) => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [250, -250]);
+  const opacity = useTransform(scrollYProgress, [0.25, 0.5, 0.75], [0, 1, 0]);
+
+  return (
+    <motion.div
+      style={{
+        y,
+        opacity,
+      }}
+      ref={targetRef}
+      className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-screen text-white"
+    >
+      <h2 className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter">
+        {heading}
+      </h2>
+      <p className="mb-2 text-xl text-center md:mb-4 md:text-3xl">
+        {subheading.split(" ").map((word, i) => (
           <motion.span
             key={i}
             initial={{ opacity: 0, y: 20 }}
@@ -35,9 +70,8 @@ const About = () => {
             {word + " "}
           </motion.span>
         ))}
-      </div>
-    </section>
+      </p>
+    </motion.div>
   );
 };
-
 export default About;

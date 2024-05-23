@@ -22,7 +22,7 @@ const Circles = () => {
     },
   ];
   return (
-    <section className="container  flex justify-center mb-20 ">
+    <section className="container flex justify-center mb-20 ">
       <motion.div
         initial={{ y: 200, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -31,12 +31,12 @@ const Circles = () => {
       >
         {circles.map((circle, i) => (
           <div
-            className="flex justify-center items-center flex-col gap-3 p-10"
+            className="flex flex-col items-center justify-center gap-3 p-10"
             key={i}
           >
             <div className="name">
               <h2 className="text-2xl font-bold">
-                <CountUp start={0} end={circle.number} duration={4} />+
+                <CountUp start={0} end={circle.number} duration={2} />+
               </h2>
 
               <p>{circle.desc}</p>

@@ -151,7 +151,7 @@ const Contact = () => {
                 <SiMinutemailer />
               </div>
               <a className="flex" href="mailto:nicolas.melda@icloud.com">
-                <span className="hidden select-none sm:flex">Email:</span>{" "}
+                <span className="hidden select-none sm:flex">Email: </span>{" "}
                 nicolas.melda@icloud.com
               </a>
             </div>

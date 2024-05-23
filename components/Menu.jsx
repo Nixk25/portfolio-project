@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Divide as Hamburger } from "hamburger-react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   {
@@ -44,7 +43,7 @@ const Menu = () => {
       },
     },
     exit: {
-      scale: 0,
+      scaleY: 0,
       transition: {
         delay: 0.5,
         duration: 0.5,
