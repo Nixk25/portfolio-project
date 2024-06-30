@@ -15,6 +15,9 @@ import {
   SiOracle,
   SiMongodb,
   SiNodedotjs,
+  SiPrisma,
+  SiSupabase,
+  SiVite,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
@@ -41,6 +44,11 @@ const technologies = [
     name: "React",
     color: "#5FD3F3",
     icon: <FaReact />,
+  },
+  {
+    name: "Vite",
+    color: "#A063FF",
+    icon: <SiVite />,
   },
 
   {
@@ -90,6 +98,16 @@ const technologies = [
     name: "Mongo DB",
     color: "#00684A",
     icon: <SiMongodb />,
+  },
+  {
+    name: "Prisma",
+    color: "#153A51",
+    icon: <SiPrisma />,
+  },
+  {
+    name: "Supabase",
+    color: "#3ECF8E",
+    icon: <SiSupabase />,
   },
 ];
 

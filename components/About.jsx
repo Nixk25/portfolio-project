@@ -5,12 +5,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export const About = () => {
   return (
-    <div className="container bg-black">
+    <section id="about" className="container bg-black">
       <TextParallaxContent
         subheading="Hi, I'm Nicolas, your future Front-End developer and passionate student from the heart of Europe! I'm currently immersed in the world of web technologies at university in Pardubice. For me, programming is not just a job, it's a lifestyle and also my cause of impostorsyndrome. My path at university gives me a solid foundation in the web world, which I combine with my passion for React.js and creativity."
         heading="About Me."
       ></TextParallaxContent>
-    </div>
+    </section>
   );
 };
 

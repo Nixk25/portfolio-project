@@ -144,14 +144,13 @@ const SkeletonFive = () => {
       </h2>
 
       <p className="my-4 text-base font-normal text-neutral-200">
-        Nutrition Lucie is a web-based eshop that combines the functions of an
-        online store with nutritional information elements. This project was
-        developed using HTML5, CSS3, React.js, Stripe and Commerce.js. Nutrition
-        Lucie offers users the opportunity to shop for nutritional products and
-        get relevant information regarding proper nutrition.
+        Nutrition Lucie is a website that combines the functions of an online
+        store with nutritional information elements. This project was developed
+        using React.js. Nutrition Lucie offers users the opportunity to get
+        relevant information regarding proper nutrition.
       </p>
       <div className="flex flex-wrap gap-5">
-        <Link href="https://nutritionallucie.netlify.app" target="_blank">
+        <Link href="https://vyzivalucie.cz" target="_blank">
           <Button className="bg-[#e18cbd] text-white">Live Demo</Button>
         </Link>
         <Link href="https://github.com/Nixk25/Vyziva" target="_blank">
