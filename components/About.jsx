@@ -7,7 +7,7 @@ export const About = () => {
   return (
     <section id="about" className="container bg-black">
       <TextParallaxContent
-        subheading="Hi, I'm Nicolas, your future Front-End developer and passionate student from the heart of Europe! I'm currently immersed in the world of web technologies at university in Pardubice. For me, programming is not just a job, it's a lifestyle and also my cause of impostorsyndrome. My path at university gives me a solid foundation in the web world, which I combine with my passion for React.js and creativity."
+        subheading="Hi, I'm Nicolas, your future Front-End developer and passionate student from the heart of Europe! I'm currently immersed in the world of web technologies at university in Pardubice. For me, programming is not just a job, it's a lifestyle and also my cause of impostor syndrome. My path at university gives me a solid foundation in the web world, which I combine with my passion for React.js and creativity."
         heading="About Me."
       ></TextParallaxContent>
     </section>
@@ -49,12 +49,18 @@ const OverlayCopy = ({ subheading, heading }) => {
         opacity,
       }}
       ref={targetRef}
-      className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-screen text-white"
+      className={`absolute top-0 left-0 flex flex-col items-center justify-center w-full h-screen text-white backdrop-filter backdrop-blur-lg`}
     >
-      <h2 className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter">
+      <motion.div
+        style={{
+          filter: "revert",
+        }}
+        className="absolute top-0 left-0 w-full h-full bg-black opacity-50"
+      />
+      <h2 className="relative w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter">
         {heading}
       </h2>
-      <p className="mb-2 text-xl text-center md:mb-4 md:text-3xl">
+      <p className="relative mb-2 text-xl text-center md:mb-4 md:text-3xl">
         {subheading.split(" ").map((word, i) => (
           <motion.span
             key={i}
@@ -74,4 +80,5 @@ const OverlayCopy = ({ subheading, heading }) => {
     </motion.div>
   );
 };
+
 export default About;

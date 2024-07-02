@@ -116,10 +116,10 @@ const Skills = () => {
     <section id="skills" className="my-[150px]">
       <div className="container">
         <motion.h1
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 50, filter: "blur(20px)" }}
+          whileInView={{ y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
           className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter"
         >
           My Skills<span className="text-white ">.</span>

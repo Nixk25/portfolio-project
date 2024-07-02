@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn.js";
 import Image from "next/image";
@@ -8,10 +8,18 @@ import { ScrollArea } from "./scroll-area";
 export const LayoutGrid = ({ cards }) => {
   const [selected, setSelected] = useState(null);
   const [lastSelected, setLastSelected] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
+  const selectedCardRef = useRef(null);
 
   const handleClick = (card) => {
     setLastSelected(selected);
     setSelected(card);
+    setIsClicked(true);
+    setTimeout(() => {
+      if (selectedCardRef.current) {
+        selectedCardRef.current.scrollTo(0, 0);
+      }
+    }, 0); // Delay to ensure state update has completed
   };
 
   const handleOutsideClick = () => {
@@ -38,17 +46,25 @@ export const LayoutGrid = ({ cards }) => {
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
+            initial={{ y: 50, filter: "blur(20px)" }}
+            whileInView={{ y: 0, filter: "blur(0px)" }}
+            transition={{
+              delay: isClicked ? 0 : i * 0.2,
+              duration: isClicked ? 0.3 : 1,
+            }}
+            viewport={{ once: true }}
             onClick={() => handleClick(card)}
             className={cn(
               card.className,
-              "relative overflow-hidden cursor-pointer ",
+              "relative overflow-auto cursor-pointer",
               selected?.id === card.id
-                ? "rounded-lg  fixed inset-0 max-h-[520px]  md:w-1/2 w-[80%]   m-auto z-50 flex justify-center items-center flex-wrap flex-col "
+                ? "rounded-lg fixed inset-0 max-h-[520px] md:w-1/2 w-[80%] m-auto z-50 flex justify-center items-center flex-wrap flex-col "
                 : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-xl  w-full"
-                : "bg-white rounded-xl  w-full"
+                ? "z-40 bg-white rounded-xl w-full"
+                : "bg-white rounded-xl w-full"
             )}
             layout
+            ref={selected?.id === card.id ? selectedCardRef : null}
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
             <BlurImage card={card} />

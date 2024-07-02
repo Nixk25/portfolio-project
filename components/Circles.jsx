@@ -36,7 +36,7 @@ const Circles = () => {
           >
             <div className="name">
               <h2 className="text-2xl font-bold">
-                <CountUp start={0} end={circle.number} duration={2} />+
+                <CountUp start={0} end={circle.number} duration={3} />+
               </h2>
 
               <p>{circle.desc}</p>

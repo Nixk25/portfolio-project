@@ -22,6 +22,18 @@ const Contact = () => {
     e.preventDefault();
 
     setLoading("Sending..");
+    const promise = () =>
+      new Promise((resolve) =>
+        setTimeout(() => resolve({ name: "Sonner" }), 1000)
+      );
+
+    toast.promise(promise, {
+      loading: "Loading...",
+      success: (data) => {
+        return `Email sent, we will get back to you soon.`;
+      },
+      error: "Error",
+    });
 
     setTimeout(() => {
       emailjs.sendForm(
@@ -48,11 +60,11 @@ const Contact = () => {
       className="mb-[100px] flex justify-center items-center flex-col rounded-lg container"
     >
       <motion.h1
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 50, filter: "blur(20px)" }}
+        whileInView={{ y: 0, filter: "blur(0px)" }}
         viewport={{ once: true }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="w-full my-8 text-5xl font-bold tracking-tighter text-center leading-tighter"
+        transition={{ duration: 1, ease: "easeInOut" }}
+        className="w-full text-5xl font-bold tracking-tighter text-center leading-tighter"
       >
         Get in touch<span className="text-white ">.</span>
       </motion.h1>
@@ -121,17 +133,11 @@ const Contact = () => {
             <Button
               onClick={() => {
                 if (formValues.name == "" && formValues.email == "") {
-                  toast.error("You forgot your name and email!", {});
+                  toast.error("You forgot your name and email!");
                 } else if (formValues.name == "") {
-                  toast.error("You forgot your name!", {});
+                  toast.error("You forgot your name!");
                 } else if (formValues.email == "") {
-                  toast.error("You forgot your email!", {});
-                } else {
-                  setTimeout(() => {
-                    toast("Message sent!", {
-                      description: "We will get back to you soon",
-                    });
-                  }, 1000);
+                  toast.error("You forgot your email!");
                 }
               }}
               className="w-full cursor-pointe"
