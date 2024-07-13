@@ -15,11 +15,10 @@ export const LayoutGrid = ({ cards }) => {
     setLastSelected(selected);
     setSelected(card);
     setIsClicked(true);
-    setTimeout(() => {
-      if (selectedCardRef.current) {
-        selectedCardRef.current.scrollTo(0, 0);
-      }
-    }, 0); // Delay to ensure state update has completed
+
+    if (selectedCardRef.current) {
+      selectedCardRef.current.scrollTo(0, 0);
+    }
   };
 
   const handleOutsideClick = () => {

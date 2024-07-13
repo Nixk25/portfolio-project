@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main className="relative w-full overflow-hidden cont">
       <Navbar />
+
       <Menu />
       <Hero />
       <Circles />

@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { motion } from "framer-motion";
 import HeroText from "./HeroText";
 import { HeroHighlight } from "./ui/hero-highlight";
+
 const icons = [
   {
     name: "Sledujte mě na Facebooku",
@@ -71,10 +72,11 @@ const Hero = () => {
             duration: 0.3,
             ease: "easeInOut",
           }}
-          className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col"
+          className="flex justify-center items-center gap-3 min-[350px]:flex-row max-[320px]:flex-col "
         >
-          <Button size="lg">
+          <Button size="lg" className="hover:cursor-none">
             <a
+              className="hover:cursor-none"
               onClick={() => {
                 toast("CV Downloaded", {
                   description: "My CV was downloaded succesfully! Enjoy :)",
@@ -86,8 +88,11 @@ const Hero = () => {
               Download CV
             </a>
           </Button>
+
           <Button size="lg" asChild>
-            <a href="#contact">Contact Me</a>
+            <a className="hover:cursor-none" href="#contact">
+              Contact Me
+            </a>
           </Button>
         </motion.div>
       </section>
