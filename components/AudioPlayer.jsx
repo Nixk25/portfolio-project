@@ -63,13 +63,13 @@ const AudioPlayer = () => {
         <Tooltip>
           <TooltipTrigger>
             <div
-              className="p-3 transition-colors duration-300 bg-white rounded-md cursor-pointer text-gray-950 hover:bg-gray-950 hover:text-white"
+              className="p-3 transition-colors duration-300 bg-white rounded-md cursor-pointer text-gray-950 "
               onClick={togglePlay}
             >
               {isPlaying ? <MdMusicNote /> : <MdMusicOff />}
             </div>
           </TooltipTrigger>
-          <TooltipContent>
+          <TooltipContent className="bg-white text-gray-950">
             <p>{isPlaying ? "Pause music" : "Play music"}</p>
           </TooltipContent>
         </Tooltip>

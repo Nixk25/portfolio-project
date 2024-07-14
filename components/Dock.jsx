@@ -89,7 +89,7 @@ function Dock() {
           />
         ))}
       </motion.nav>
-      <div className="fixed right-0 z-50 top-2  sm:top-[90%] ">
+      <div className="fixed right-4 z-50 top-2  sm:top-[90%] ">
         <AudioPlayer />
       </div>
     </>

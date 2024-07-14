@@ -20,7 +20,7 @@ export const HeroHighlight = ({
     mouseY.set(clientY - top);
   }
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -54,7 +54,7 @@ export const HeroHighlight = ({
         <div className="absolute inset-0 h-full w-full  pointer-events-none bg-black [mask-image:radial-gradient(ellipse_at_center,transparent,white)]" />
       )}
       <div className={cn("relative z-20", className)}>{children}</div>
-    </motion.div>
+    </div>
   );
 };
 
