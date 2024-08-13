@@ -24,7 +24,7 @@ const Contact = () => {
     setLoading("Sending..");
     const promise = () =>
       new Promise((resolve) =>
-        setTimeout(() => resolve({ name: "Sonner" }), 1000)
+        setTimeout(() => resolve({ name: "Sonner" }), 1500)
       );
 
     toast.promise(promise, {
@@ -36,28 +36,19 @@ const Contact = () => {
     });
 
     setTimeout(() => {
-      emailjs
-        .sendForm(
-          "service_0v4xwrp",
-          "template_y9cyuxx",
-          form.current,
-          "Y5l1p_gEbW-fiLa4a"
-        )
-        .then(
-          () => {
-            console.log("SUCCESS");
-          },
-          (error) => {
-            console.log("failed", error.text);
-          }
-        );
-
+      emailjs.sendForm(
+        "service_0v4xwrp",
+        "template_y9cyuxx",
+        form.current,
+        "Y5l1p_gEbW-fiLa4a"
+      );
       setFormValues({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
+      form.reset();
       setLoading("Send");
     }, 1000);
   };
