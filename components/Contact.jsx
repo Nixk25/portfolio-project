@@ -36,12 +36,21 @@ const Contact = () => {
     });
 
     setTimeout(() => {
-      emailjs.sendForm(
-        process.env.NEXT_SERVICE_ID,
-        process.env.NEXT_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      );
+      emailjs
+        .sendForm(
+          "service_0v4xwrp",
+          "template_y9cyuxx",
+          form.current,
+          "Y5l1p_gEbW-fiLa4a"
+        )
+        .then(
+          () => {
+            console.log("SUCCESS");
+          },
+          (error) => {
+            console.log("failed", error.text);
+          }
+        );
 
       setFormValues({
         name: "",
@@ -49,8 +58,8 @@ const Contact = () => {
         subject: "",
         message: "",
       });
+      setLoading("Send");
     }, 1000);
-    setLoading("Send");
   };
 
   return (
