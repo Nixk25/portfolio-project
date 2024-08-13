@@ -49,9 +49,8 @@ const Contact = () => {
         subject: "",
         message: "",
       });
-
-      setLoading("Send");
     }, 1000);
+    setLoading("Send");
   };
 
   return (
