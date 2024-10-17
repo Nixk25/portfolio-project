@@ -3,7 +3,7 @@ import React from "react";
 import { LayoutGrid } from "./ui/layout-grid";
 import tnrb from "../public/tnrband.png";
 import Brewtique from "../public/brewtique.png";
-import Cars from "../public/cars.png";
+import Eclat from "../public/éclat.png";
 import Vyziva from "../public/vyziva.png";
 import HouseFix from "../public/housefix.png";
 import cookifyImg from "../public/cookify.png";
@@ -12,7 +12,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 const Projects = () => {
   return (
-    <div id="projects" className="relative w-full py-20">
+    <div id="projects" className="relative w-full">
       <motion.h1
         initial={{ y: 50, filter: "blur(20px)" }}
         whileInView={{ y: 0, filter: "blur(0px)" }}
@@ -33,18 +33,13 @@ const SkeletonOne = () => {
       <h2 className="text-4xl font-bold text-white">Cookify</h2>
 
       <p className="my-4 text-base font-normal text-neutral-200">
-        Cookify is a web application designed for culinary enthusiasts. Try demo{" "}
+        Cookify is a web app for culinary enthusiasts with a demo login{" "}
         <pre className="mb-2 bg-white/10 w-max">email:admin@example.com</pre>
-        <pre className="mb-2 bg-white/10 w-max">password:adminadmin</pre> It’s
-        built using a robust tech stack that includes Next.js, Tailwind CSS,
-        Node.js, MongoDB, NextAuth.js and OpeanAI API because I want to
-        implement Ai chat that works with my database. The application serves as
-        a platform for users to explore, modify, and manage cooking recipes. It
-        offers a user-friendly interface where users can view individual recipes
-        in detail. Users can also add their favorite recipes to a personalized
-        collection for easy access. One of the key features of Cookify is its
-        user management system. It allows users to register and log in to their
-        accounts, providing a personalized experience for each user.
+        <pre className="mb-2 bg-white/10 w-max">password:adminadmin</pre> Built
+        with Next.js, Tailwind CSS, Node.js, MongoDB, NextAuth.js it allows
+        users to explore and manage recipes. The app features a user-friendly
+        interface and a user management system for personalized experiences,
+        enabling users to save their favorite recipes.​
       </p>
       <div className="flex flex-wrap gap-5">
         <Link href="https://coookify.vercel.app" target="_blank">
@@ -90,21 +85,20 @@ const SkeletonTwo = () => {
 const SkeletonThree = () => {
   return (
     <div>
-      <h2 className="text-4xl font-bold text-white">Rentopia</h2>
+      <h2 className="text-4xl font-bold text-white">Éclat Gallery</h2>
 
       <p className="my-4 text-base font-normal text-neutral-200">
-        Rentopia is a web application developed using a modern framework for
-        React.js called Next.js. The application is used to view information
-        about different types of cars, and the data is retrieved through an API.
-        The project is built on HTML5, JavaScript, Next.js and Tailwind CSS,
-        which provides a modern and responsive user interface.
+        Éclat Gallery is built with Next.js, Framer Motion, Tailwind CSS, and
+        shadcn/ui. It features interactive animations and a clean, modern
+        design. The gallery showcases artwork from global artists with a focus
+        on performance and user experience.
       </p>
       <div className="flex flex-wrap gap-5">
-        <Link href="https://car-webpage.vercel.app/" target="_blank">
-          <Button className="bg-[#8ACFF1]">Live Demo</Button>
+        <Link href="https://gallery-theta-seven.vercel.app/" target="_blank">
+          <Button className="bg-[#F55751]">Live Demo</Button>
         </Link>
-        <Link href="https://github.com/Nixk25/car_webpage" target="_blank">
-          <Button className="bg-[#8ACFF1] text-black" variant="ghost">
+        <Link href="https://github.com/Nixk25/gallery" target="_blank">
+          <Button className="bg-[#F55751] text-black" variant="ghost">
             View Code
           </Button>
         </Link>
@@ -206,8 +200,8 @@ const cards = [
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1 min-h-[100px]",
-    thumbnail: Cars,
-    color: "#8ACFF1",
+    thumbnail: Eclat,
+    color: "#F55751",
   },
   {
     id: 4,

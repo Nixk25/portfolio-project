@@ -126,7 +126,7 @@ const SelectedCard = ({ selected }) => {
             duration: 0.3,
             ease: "easeInOut",
           }}
-          className="relative px-8 py-20 z-[70]"
+          className="relative px-5 py-10 z-[70]"
         >
           {selected.content}
         </motion.div>
