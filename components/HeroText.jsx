@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const HeroText = () => {
-  const textToAnimate = `Hi, my name is Nicolas and I like to build new web applications. My main focus is front-end in React (Next.js).`;
+  const textToAnimate = `Hi, I am Nicolas – Creating Web Experiences That Merge Creativity with Technology`;
 
   return (
     <p className="text-stroke max-[320px]:text-2xl sm:text-5xl text-3xl text-center max-w-[550px] sm:max-w-[90%] leading-tighter tracking-tighter p-5 transition-all duration-200">

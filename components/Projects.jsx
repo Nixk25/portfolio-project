@@ -189,14 +189,14 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2 min-h-[100px]",
+    className: "col-span-2 min-h-[100px]",
     thumbnail: loom,
     color: "#000",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1 min-h-[100px]",
+    className: "col-span-2 md:col-span-1 min-h-[100px]",
     thumbnail: Eclat,
     color: "#F55751",
   },
@@ -204,14 +204,14 @@ const cards = [
     id: 3,
     content: <SkeletonThree />,
 
-    className: "md:col-span-1 min-h-[100px]",
+    className: "md:col-span-1 col-span-2 min-h-[100px]",
     thumbnail: cashmate,
     color: "#6D9EE8",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2 min-h-[100px]",
+    className: " col-span-2 min-h-[100px]",
     thumbnail: cookifyImg,
     color: "#57C2A9",
   },
@@ -226,7 +226,7 @@ const cards = [
   {
     id: 6,
     content: <SkeletonSix />,
-    className: "col-span-1 min-h-[100px]",
+    className: "col-span-2 md:col-span-1 min-h-[100px]",
     thumbnail: HouseFix,
     color: "#f9d546",
   },
