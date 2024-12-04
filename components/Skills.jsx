@@ -18,6 +18,8 @@ import {
   SiPrisma,
   SiSupabase,
   SiVite,
+  SiAffinitydesigner,
+  SiAffinityphoto,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
@@ -108,6 +110,16 @@ const technologies = [
     name: "Supabase",
     color: "#3ECF8E",
     icon: <SiSupabase />,
+  },
+  {
+    name: "Affinity Designer",
+    color: "#4DCCFA",
+    icon: <SiAffinitydesigner />,
+  },
+  {
+    name: "Affinity Photo",
+    color: "#EB77FF",
+    icon: <SiAffinityphoto />,
   },
 ];
 

@@ -2,9 +2,9 @@
 import React from "react";
 import { LayoutGrid } from "./ui/layout-grid";
 import tnrb from "../public/tnrband.png";
-import Brewtique from "../public/brewtique.png";
+import loom from "../public/loom.png";
 import Eclat from "../public/éclat.png";
-import Vyziva from "../public/vyziva.png";
+import cashmate from "../public/cashmate.png";
 import HouseFix from "../public/housefix.png";
 import cookifyImg from "../public/cookify.png";
 import { Button } from "./ui/button";
@@ -28,6 +28,85 @@ const Projects = () => {
 };
 
 const SkeletonOne = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">Loom</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        Loom is a website built with Next.js, React, and TypeScript, designed as
+        a creative platform for showcasing street art. The site features
+        interactive scroll animations and dynamic visuals, creating an engaging
+        and immersive experience. Users can explore trending artworks, artists,
+        and posts. The project is still under development, with ongoing work to
+        enhance its features and functionality.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://loomproject.vercel.app/" target="_blank">
+          <Button className="bg-[#000] text-white">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/loom" target="_blank">
+          <Button className="bg-[#000] text-white" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const SkeletonTwo = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">Éclat Gallery</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        Éclat Gallery is built with Next.js, Framer Motion, Tailwind CSS, and
+        shadcn/ui. It features interactive animations and a clean, modern
+        design. The gallery showcases artwork from global artists with a focus
+        on performance and user experience.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://gallery-theta-seven.vercel.app/" target="_blank">
+          <Button className="bg-[#F55751]">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/gallery" target="_blank">
+          <Button className="bg-[#F55751] text-black" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+const SkeletonThree = () => {
+  return (
+    <div>
+      <h2 className="text-4xl font-bold text-white">Cashmate</h2>
+
+      <p className="my-4 text-base font-normal text-neutral-200">
+        CashMate is a financial education web application developed with
+        Next.js, TypeScript, and Tailwind CSS, designed to help users manage
+        their finances smarter and more effectively. It includes features like a
+        guided onboarding process, personalized dashboards, and tools for
+        tracking spending and investments. CashMate aims to improve financial
+        literacy by offering users insightful and easy-to-use tools. This is an
+        ongoing, complex project with continuous development to introduce
+        advanced features and refine the user experience.
+      </p>
+      <div className="flex flex-wrap gap-5">
+        <Link href="https://cashymate.vercel.app/" target="_blank">
+          <Button className="bg-[#6D9EE8] text-white">Live Demo</Button>
+        </Link>
+        <Link href="https://github.com/Nixk25/cashmate" target="_blank">
+          <Button className="bg-[#6D9EE8] text-white" variant="ghost">
+            View Code
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+const SkeletonFour = () => {
   return (
     <div>
       <h2 className="text-4xl font-bold text-white">Cookify</h2>
@@ -57,8 +136,7 @@ const SkeletonOne = () => {
     </div>
   );
 };
-
-const SkeletonTwo = () => {
+const SkeletonFive = () => {
   return (
     <div>
       <h2 className="text-4xl font-bold text-white">TNR-Band</h2>
@@ -75,80 +153,6 @@ const SkeletonTwo = () => {
         </Link>
         <Link href="https://github.com/Nixk25/Eda" target="_blank">
           <Button className="bg-[#FF930F] text-black" variant="ghost">
-            View Code
-          </Button>
-        </Link>
-      </div>
-    </div>
-  );
-};
-const SkeletonThree = () => {
-  return (
-    <div>
-      <h2 className="text-4xl font-bold text-white">Éclat Gallery</h2>
-
-      <p className="my-4 text-base font-normal text-neutral-200">
-        Éclat Gallery is built with Next.js, Framer Motion, Tailwind CSS, and
-        shadcn/ui. It features interactive animations and a clean, modern
-        design. The gallery showcases artwork from global artists with a focus
-        on performance and user experience.
-      </p>
-      <div className="flex flex-wrap gap-5">
-        <Link href="https://gallery-theta-seven.vercel.app/" target="_blank">
-          <Button className="bg-[#F55751]">Live Demo</Button>
-        </Link>
-        <Link href="https://github.com/Nixk25/gallery" target="_blank">
-          <Button className="bg-[#F55751] text-black" variant="ghost">
-            View Code
-          </Button>
-        </Link>
-      </div>
-    </div>
-  );
-};
-const SkeletonFour = () => {
-  return (
-    <div>
-      <h2 className="text-4xl font-bold text-white">Brewtique</h2>
-
-      <p className="my-4 text-base font-normal text-neutral-200">
-        Brewtique is a website developed using HTML5, CSS3 and React.js. This
-        website serves as a virtual space for an imaginary cafe called
-        Brewtique. Users can browse through a menu of coffee and other
-        delicacies.
-      </p>
-      <div className="flex flex-wrap gap-5">
-        <Link href="https://brewtique.netlify.app" target="_blank">
-          <Button className="bg-[#d6873d]">Live Demo</Button>
-        </Link>
-        <Link href="https://github.com/Nixk25/Coffee-Shop" target="_blank">
-          <Button className="bg-[#d6873d] text-black" variant="ghost">
-            View Code
-          </Button>
-        </Link>
-      </div>
-    </div>
-  );
-};
-const SkeletonFive = () => {
-  return (
-    <div>
-      <h2 className="text-4xl font-bold text-white">
-        Nutritional counselling Lucie
-      </h2>
-
-      <p className="my-4 text-base font-normal text-neutral-200">
-        Nutrition Lucie is a website that combines the functions of an online
-        store with nutritional information elements. This project was developed
-        using React.js. Nutrition Lucie offers users the opportunity to get
-        relevant information regarding proper nutrition.
-      </p>
-      <div className="flex flex-wrap gap-5">
-        <Link href="https://vyzivalucie.cz" target="_blank">
-          <Button className="bg-[#e18cbd] text-white">Live Demo</Button>
-        </Link>
-        <Link href="https://github.com/Nixk25/Vyziva" target="_blank">
-          <Button className="bg-[#e18cbd] text-white" variant="ghost">
             View Code
           </Button>
         </Link>
@@ -186,37 +190,38 @@ const cards = [
     id: 1,
     content: <SkeletonOne />,
     className: "md:col-span-2 min-h-[100px]",
-    thumbnail: cookifyImg,
-    color: "#57C2A9",
+    thumbnail: loom,
+    color: "#000",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
     className: "col-span-1 min-h-[100px]",
-    thumbnail: tnrb,
-    color: "#FF930F",
+    thumbnail: Eclat,
+    color: "#F55751",
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1 min-h-[100px]",
-    thumbnail: Eclat,
-    color: "#F55751",
+
+    className: "md:col-span-1 min-h-[100px]",
+    thumbnail: cashmate,
+    color: "#6D9EE8",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-2 min-h-[100px]",
-    thumbnail: Brewtique,
-    color: "#d6873d",
+    thumbnail: cookifyImg,
+    color: "#57C2A9",
   },
 
   {
     id: 5,
     content: <SkeletonFive />,
-    className: "md:col-span-2 min-h-[100px]",
-    thumbnail: Vyziva,
-    color: "#e18cbd",
+    className: "col-span-2 min-h-[100px]",
+    thumbnail: tnrb,
+    color: "#FF930F",
   },
   {
     id: 6,
