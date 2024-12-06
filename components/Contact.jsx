@@ -129,6 +129,14 @@ const Contact = () => {
                 }}
               />
             </div>
+            <a
+              href="/privacy"
+              target="_blank"
+              className="flex justify-start w-full text-start"
+            >
+              By submitting, you agree to data processing.
+            </a>
+
             <Button
               onClick={() => {
                 if (formValues.name == "" && formValues.email == "") {
