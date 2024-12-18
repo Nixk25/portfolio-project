@@ -3,80 +3,19 @@
 @tailwind utilities;
 
 :root {
-  scroll-padding-top: 100px;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
-html,
 body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #000;
-  color: #f2f2f2;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.hovering-text {
-  transition: all ease 300ms;
-}
-
-.hovering-text:hover {
-  font-weight: 900;
-  -webkit-text-fill-color: #dbc1ac;
-  -webkit-text-stroke: 1px transparent;
-}
-
-.hovering-text:hover + .hovering-text {
-  font-weight: 500;
-  -webkit-text-fill-color: #dbc1ac;
-  -webkit-text-stroke: 0px transparent;
-}
-
-.hovering-text:hover + .hovering-text + .hovering-text {
-  font-weight: 300;
-  -webkit-text-fill-color: #dbc1ac;
-  -webkit-text-stroke: 0px transparent;
-}
-
-.hovering-text:has(+ .hovering-text:hover) {
-  font-weight: 500;
-  -webkit-text-fill-color: #dbc1ac;
-  -webkit-text-stroke: 0px transparent;
-}
-
-.hovering-text:has(+ .hovering-text + .hovering-text:hover) {
-  font-weight: 300;
-  -webkit-text-fill-color: #dbc1ac;
-  -webkit-text-stroke: 0px transparent;
-}
-
-.hamburger-react {
-  z-index: 52;
-  cursor: pointer;
-}
-
-.text-stroke {
-  -webkit-text-stroke: 1px #fff;
-  -webkit-text-fill-color: transparent;
-}
-
-.card {
-  transition: scale 200ms ease;
-}
-
-.card:hover {
-  scale: 1.2;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
