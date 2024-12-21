@@ -21,20 +21,20 @@ const MenuContent = ({ toggleMenu }: MenuContentProps) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="fixed top-2 right-2 w-[250px] px-5 h-[500px] bg-neutral-900 overflow-y-auto rounded-tl-lg rounded-bl-lg rounded-br-lg origin-top-right"
+      className="fixed top-2 right-2 w-[350px] px-5 h-[500px] bg-neutral-900 overflow-y-auto rounded-tl-lg rounded-bl-lg rounded-br-lg origin-top-right"
     >
       <motion.div
         variants={listVariants}
         initial="initial"
         animate="visible"
         exit="initial"
-        className="flex h-full flex-col items-start justify-center gap-5"
+        className="flex flex-col items-start justify-center h-full gap-5"
       >
         {NAV_LINKS.map((item, i) => (
           <motion.div
             onClick={toggleMenu}
             variants={navLinkVariants}
-            className="origin-left relative"
+            className="relative origin-left"
             key={i}
           >
             <Link className="text-2xl text-white" href={item.href}>
@@ -43,13 +43,13 @@ const MenuContent = ({ toggleMenu }: MenuContentProps) => {
           </motion.div>
         ))}
       </motion.div>
-      <div className="absolute right-4 top-1/2 -translate-y-1/2">
+      <div className="absolute -translate-y-1/2 right-4 top-1/2">
         <motion.div
           variants={socialsVariants}
           initial="initial"
           animate="visible"
           exit="initial"
-          className="flex flex-col gap-2 justify-center w-full"
+          className="flex flex-col justify-center w-full gap-2"
         >
           {SOCIALS.map(({ icon: Icon, href }, i) => (
             <motion.a
@@ -73,7 +73,7 @@ const MenuContent = ({ toggleMenu }: MenuContentProps) => {
         animate="visible"
         exit="initial"
         transition={{ duration: 0.5, delay: 1 }}
-        className="absolute bottom-2 text-sm flex flex-col gap-2 text-white/50"
+        className="absolute flex flex-col gap-2 text-sm bottom-2 text-white/50"
       >
         <a href="mailto:nicolas.melda@icloud.com">nicolas.melda@icloud.com</a>
         <a href="tel:606047025">606047025</a>

@@ -39,7 +39,7 @@ const Menu = () => {
     };
   }, [isMenuOpen]);
   return (
-    <div className="flex relative items-center justify-center ">
+    <div className="relative flex items-center justify-center ">
       <span
         className={`cursor-pointer relative z-10  ${
           isMenuOpen ? "text-white" : "text-neutral-900"
@@ -48,9 +48,11 @@ const Menu = () => {
       >
         MENU
       </span>
-      <AnimatePresence mode="wait">
-        {isMenuOpen && <MenuContent toggleMenu={toggleMenu} />}
-      </AnimatePresence>
+      <div>
+        <AnimatePresence mode="wait">
+          {isMenuOpen && <MenuContent toggleMenu={toggleMenu} />}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };

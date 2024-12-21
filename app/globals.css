@@ -13,8 +13,7 @@
 body {
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
-  overflow-x: hidden;
-
+  overflow: hidden;
   height: 100%;
 }
 
@@ -24,5 +23,8 @@ body {
 }
 
 .mainHeadline {
-  font-size: clamp(2rem, 10vw, 12rem);
+  font-size: clamp(2rem, 9.5vw, 12rem);
+}
+.heroDesc {
+  font-size: clamp(1rem, 2vw, 3rem);
 }

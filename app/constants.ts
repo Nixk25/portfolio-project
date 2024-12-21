@@ -42,3 +42,21 @@ export const SOCIALS = [
     href: "mailto:nicolas.melda@icloud.com",
   },
 ];
+
+export const WORKS = [
+  {
+    title: "Frontend development",
+  },
+  {
+    title: "UI/UX design",
+  },
+  {
+    title: "Web apps",
+  },
+  {
+    title: "graphic design",
+  },
+  {
+    title: "Animations",
+  },
+];
