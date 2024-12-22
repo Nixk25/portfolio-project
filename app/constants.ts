@@ -60,3 +60,41 @@ export const WORKS = [
     title: "Animations",
   },
 ];
+
+export const SKILLS = [
+  {
+    name: "Tailwind CSS",
+    image: "/Ancient Redwoods.webp",
+    row: 1,
+  },
+  {
+    name: "React",
+    image: "/Blurred Motion Portrait.webp",
+    row: 1,
+  },
+  {
+    name: "Next.js",
+    image: "/Fawn in Meadow.webp",
+    row: 1,
+  },
+  {
+    name: "Typescript",
+    image: "/Secluded Forest Trail.webp",
+    row: 2,
+  },
+  {
+    name: "Framer Motion",
+    image: "/Serene Natural Landscape.webp",
+    row: 2,
+  },
+  {
+    name: "Frontend development",
+    image: "/Serene White Dog.webp",
+    row: 2,
+  },
+  {
+    name: "Animations",
+    image: "/Tranquil Beach Chairs.webp",
+    row: 3,
+  },
+];

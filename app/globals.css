@@ -25,6 +25,9 @@ body {
 .mainHeadline {
   font-size: clamp(2rem, 9.5vw, 12rem);
 }
+.skillsText {
+  font-size: clamp(2rem, 5vw, 6rem);
+}
 .heroDesc {
   font-size: clamp(1rem, 2vw, 3rem);
 }
