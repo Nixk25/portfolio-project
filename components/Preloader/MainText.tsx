@@ -23,7 +23,7 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   const top = useTransform(
     scrollYProgress,
     [0, 1],
-    [isLaptop ? "3%" : "10%", isLaptop ? "-38%" : "-26.5%"]
+    [isLaptop ? "3%" : "10%", isLaptop ? "-15%" : "-0.5%"]
   );
 
   const animatedTop = textUp
