@@ -114,17 +114,17 @@ export const bottomMenuVariants = {
 
 export const lineVariants = {
   initial: {
-    height: 0,
+    scaleY: 0,
     transition: {
       duration: 1,
       ease: [0.22, 1, 0.36, 1],
     },
   },
   animate: {
-    height: "100%",
+    scaleY: 1,
     transition: {
-      delay: 4,
-      duration: 1,
+      delay: 5,
+      duration: 3,
       ease: [0.22, 1, 0.36, 1],
     },
   },

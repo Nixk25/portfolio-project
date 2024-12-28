@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence } from "framer";
+import { AnimatePresence } from "motion/react";
 import React, { useEffect, useState } from "react";
 import MenuContent from "./MenuContent";
 
@@ -24,35 +24,22 @@ const Menu = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.setProperty("height", "100vh", "important");
-      document.body.style.setProperty("overflow", "hidden", "important");
-    } else {
-      document.body.style.setProperty("height", "auto", "important");
-      document.body.style.setProperty("overflow", "auto", "important");
-    }
-
-    return () => {
-      document.body.style.setProperty("height", "auto", "important");
-      document.body.style.setProperty("overflow", "auto", "important");
-    };
-  }, [isMenuOpen]);
   return (
     <div className="relative flex items-center justify-center ">
       <span
-        className={`cursor-pointer relative z-10  ${
+        className={`cursor-pointer relative font-normal z-10  ${
           isMenuOpen ? "text-white" : "text-neutral-900"
         }`}
         onClick={toggleMenu}
       >
         MENU
       </span>
-      <div>
-        <AnimatePresence mode="wait">
-          {isMenuOpen && <MenuContent toggleMenu={toggleMenu} />}
-        </AnimatePresence>
-      </div>
+
+      <AnimatePresence mode="wait">
+        {isMenuOpen && (
+          <MenuContent toggleMenu={toggleMenu} key="menu-content" />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

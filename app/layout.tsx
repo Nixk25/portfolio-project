@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GeistMono } from "geist/font/mono";
+
 export const metadata: Metadata = {
   title: "Nicolas Melda | Creative developer",
   description:
@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistMono.variable} font-mono antialiased`}>
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

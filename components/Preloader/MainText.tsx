@@ -3,25 +3,42 @@ import React, { useEffect, useState } from "react";
 import { motion, useTransform } from "motion/react";
 import { MotionValue } from "motion/react";
 import { useMediaQuery } from "react-responsive";
+
 type MainTextProps = {
   scrollYProgress: MotionValue<number>;
 };
+
 const MainText = ({ scrollYProgress }: MainTextProps) => {
-  const name = "NICOLAS MELDA";
+  const name = "Nicolas Melda";
   const isLaptop = useMediaQuery({ minWidth: 1024 });
   const [textUp, setTextUp] = useState(false);
   const [isAnimationDone, setIsAnimationDone] = useState(false);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [1, isLaptop ? 0.2 : 0.4]
+  );
+
   const top = useTransform(
     scrollYProgress,
     [0, 1],
-    ["10%", isLaptop ? "-36%" : "-33%"]
+    [isLaptop ? "3%" : "10%", isLaptop ? "-38%" : "-26.5%"]
   );
+
+  const animatedTop = textUp
+    ? isLaptop
+      ? "3%"
+      : "10%"
+    : isLaptop
+    ? "80%"
+    : "85%";
 
   useEffect(() => {
     const textTimer = setTimeout(() => {
       setTextUp(true);
     }, 3000);
+
     const animationTimer = setTimeout(() => {
       setIsAnimationDone(true);
     }, 4300);
@@ -34,10 +51,13 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
 
   return (
     <motion.div
-      className="fixed w-full h-full mt-5 text-center font mainHeadline"
-      initial={{ top: "75%" }}
+      className="fixed w-full z-[999999]  text-center font mainHeadline"
+      initial={{ top: "80%" }}
       animate={{
-        top: textUp ? "10%" : "75%",
+        top: animatedTop,
+        fontSize: textUp
+          ? "clamp(1rem, 16.5vw, 20rem)"
+          : "clamp(1rem, 8vw, 20rem)",
       }}
       transition={{
         duration: 1,
@@ -48,7 +68,8 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
       <span>
         {name.split("").map((char, i) => (
           <motion.span
-            initial={{ y: 200, opacity: 0 }}
+            whileHover={{ filter: "blur(10px)" }}
+            initial={{ y: 400, opacity: 0 }}
             animate={{
               y: 0,
               opacity: 1,

@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Aktura";
+  src: url("/fonts/Aktura-Regular.woff2") format("woff2"),
+    url("/fonts/Aktura-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Pilowlava";
   src: url("/fonts/Pilowlava-Regular.woff2") format("woff2"),
     url("/fonts/Pilowlava-Regular.woff") format("woff");
@@ -10,24 +18,37 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("/fonts/Satoshi-Variable.woff") format("woff");
+}
+
 body {
-  font-family: "Helvetica", sans-serif;
-  font-weight: bold;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 100;
   overflow: hidden;
   height: 100%;
+  cursor: none;
+  background-color: #e5e5e5;
 }
 
 .font {
+  font-family: "Aktura", sans-serif;
+  font-weight: normal;
+}
+
+.logo {
   font-family: "Pilowlava", sans-serif;
   font-weight: normal;
 }
 
 .mainHeadline {
-  font-size: clamp(2rem, 9.5vw, 12rem);
+  font-size: clamp(1rem, 16.5vw, 20rem);
 }
 .skillsText {
   font-size: clamp(2rem, 5vw, 6rem);
 }
 .heroDesc {
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: clamp(1.2rem, 3vw, 3rem);
 }

@@ -20,12 +20,6 @@ const Preloader = () => {
       setIsPreloader(false);
     }, 4200);
 
-    if (typeof window !== "undefined") {
-      window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-      };
-    }
-
     return () => {
       clearTimeout(timer);
       clearTimeout(preloaderTimer);
@@ -50,7 +44,9 @@ const Preloader = () => {
   return (
     <div
       ref={ref}
-      className={`h-[100svh]  absolute w-full flex items-center justify-center overflow-y-hidden transition-all duration-500 ${
+      className={`${
+        isPreloader ? "h-[100svh]" : ""
+      }  fixed w-full flex items-center justify-center overflow-y-hidden transition-all duration-500 ${
         isHidden ? "z-[5]" : "z-[9999]"
       }`}
     >

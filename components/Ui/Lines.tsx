@@ -1,7 +1,6 @@
 "use client";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Line from "./Hero/Line";
-
+import Line from "../Hero/Line";
 interface LineConfig {
   width: number;
   gap: number;

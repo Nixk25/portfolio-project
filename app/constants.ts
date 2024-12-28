@@ -54,7 +54,7 @@ export const WORKS = [
     title: "Web apps",
   },
   {
-    title: "graphic design",
+    title: "Graphic design",
   },
   {
     title: "Animations",
@@ -63,38 +63,51 @@ export const WORKS = [
 
 export const SKILLS = [
   {
-    name: "Tailwind CSS",
-    image: "/Ancient Redwoods.webp",
-    row: 1,
+    skills: [
+      {
+        name: "Tailwind CSS",
+        image: "/photo1.webp",
+      },
+      {
+        name: "React",
+        image: "/photo2.webp",
+      },
+      {
+        name: "Next.js",
+        image: "/photo3.webp",
+      },
+    ],
   },
   {
-    name: "React",
-    image: "/Blurred Motion Portrait.webp",
-    row: 1,
+    skills: [
+      {
+        name: "Typescript",
+        image: "/photo4.webp",
+      },
+      {
+        name: "Motion",
+        image: "/photo5.webp",
+      },
+      {
+        name: "Frontend",
+        image: "/photo6.webp",
+      },
+    ],
   },
   {
-    name: "Next.js",
-    image: "/Fawn in Meadow.webp",
-    row: 1,
-  },
-  {
-    name: "Typescript",
-    image: "/Secluded Forest Trail.webp",
-    row: 2,
-  },
-  {
-    name: "Framer Motion",
-    image: "/Serene Natural Landscape.webp",
-    row: 2,
-  },
-  {
-    name: "Frontend development",
-    image: "/Serene White Dog.webp",
-    row: 2,
-  },
-  {
-    name: "Animations",
-    image: "/Tranquil Beach Chairs.webp",
-    row: 3,
+    skills: [
+      {
+        name: "Animations",
+        image: "/photo7.webp",
+      },
+      {
+        name: "Web Design",
+        image: "/photo8.webp",
+      },
+      {
+        name: "UI/UX",
+        image: "/photo9.webp",
+      },
+    ],
   },
 ];

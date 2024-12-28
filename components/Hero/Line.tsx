@@ -7,7 +7,7 @@ const Line = ({ position }: { position: number }) => {
       variants={lineVariants}
       initial="initial"
       animate="animate"
-      className="absolute bottom-0 h-full pointer-events-none select-none blur-[3px] bg-neutral-200 w-[2px] "
+      className="absolute origin-bottom bottom-0 h-full pointer-events-none select-none bg-neutral-300 w-[1px] "
       style={{ left: `${position}px` }}
     />
   );

@@ -12,8 +12,8 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        mono: ["var(--font-geist-mono)"],
+      fontSize: {
+        mainHeadline: "clamp(1rem, 16.5vw, 20rem);",
       },
     },
   },
