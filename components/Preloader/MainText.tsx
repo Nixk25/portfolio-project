@@ -37,7 +37,7 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   useEffect(() => {
     const textTimer = setTimeout(() => {
       setTextUp(true);
-    }, 3000);
+    }, 3200);
 
     const animationTimer = setTimeout(() => {
       setIsAnimationDone(true);
@@ -67,24 +67,40 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
     >
       <span>
         {name.split("").map((char, i) => (
-          <motion.span
-            whileHover={{ filter: "blur(10px)" }}
-            initial={{ y: 400, opacity: 0 }}
-            animate={{
-              y: 0,
-              opacity: 1,
-              color: textUp ? "black" : "white",
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeInOut",
-              delay: textUp ? 0 : 0.2 + i * 0.1,
-            }}
-            key={i}
-            className="relative inline-block"
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
+          <div key={i} className="relative inline-block origin-bottom">
+            <motion.span
+              whileHover={{ filter: "blur(10px)" }}
+              initial={{ scaleY: 0, opacity: 0 }}
+              animate={{
+                scaleY: 1,
+                opacity: 1,
+                color: textUp ? "black" : "white",
+              }}
+              transition={{
+                ease: "easeInOut",
+                delay: textUp ? 0 : 0.2 + i * 0.1,
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </motion.span>
+            <motion.div
+              initial={{ y: 0, opacity: 1 }}
+              animate={{ y: "-100%", opacity: 0 }}
+              transition={{
+                y: {
+                  delay: 1 + i * 0.1,
+                  duration: 1,
+                  ease: "easeInOut",
+                },
+                opacity: {
+                  delay: 1 + i * 0.1,
+                  duration: 1,
+                  ease: "easeInOut",
+                },
+              }}
+              className="absolute z-10 bg-[#252525] inset-0  h-full"
+            />
+          </div>
         ))}
       </span>
     </motion.div>

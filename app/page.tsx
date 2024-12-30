@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.5,
+      duration: 1.2,
       easing: (t) => t * (2 - t),
     });
 
@@ -24,30 +24,21 @@ export default function Home() {
 
     requestAnimationFrame(raf);
 
-    const handleLoad = () => {
-      lenis.scrollTo(0, { duration: 0 });
-    };
+    if (isPreloader) {
+      lenis.scrollTo(0, { duration: 0.01 });
+      setTimeout(() => {
+        lenis.stop();
+      }, 100);
+    }
 
     const timer = setTimeout(() => {
       setIsPreloader(false);
-    }, 4000);
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("load", handleLoad);
-    }
-
-    if (isPreloader) {
-      document.body.style.overflow = "hidden";
-      document.body.style.height = "100vh";
-    }
+    }, 4500);
 
     return () => {
       clearTimeout(timer);
-      if (typeof window !== "undefined") {
-        window.removeEventListener("load", handleLoad);
-      }
     };
-  }, []);
+  }, [isPreloader]);
 
   return (
     <div className={`relative ${isPreloader ? "overflow-hidden" : ""}`}>

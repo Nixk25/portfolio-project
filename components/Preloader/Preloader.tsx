@@ -15,7 +15,7 @@ const Preloader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsHidden(true);
-    }, 4000);
+    }, 4100);
     const preloaderTimer = setTimeout(() => {
       setIsPreloader(false);
     }, 4200);

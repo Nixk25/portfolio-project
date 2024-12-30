@@ -6,7 +6,7 @@ const HeroSubHeader = ({ opacity }: { opacity: MotionValue<number> }) => {
   return (
     <motion.div
       whileHover={{ filter: "blur(10px)" }}
-      className="absolute left-5 flex justify-start w-full uppercase md:top-[50%] top-[30%] heroDesc font-light overflow-hidden   "
+      className="absolute left-5 flex justify-start  uppercase md:top-[50%] top-[30%] heroDesc font-light overflow-hidden   "
     >
       <motion.span
         initial={{

@@ -7,11 +7,11 @@ const SVGPreloader = () => {
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 3 }}
-      className="bg-[#252525] h-full w-full flex
+      className="bg-[#252525]  h-full w-full flex
 items-center justify-center"
     >
       <svg
-        className=" relative z-[2] "
+        className=" relative z-[2]  "
         width="244"
         height="254"
         viewBox="0 0 260 260"
@@ -19,7 +19,7 @@ items-center justify-center"
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.path
-          className="h-full"
+          className="h-full relative z-10"
           strokeWidth="5"
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
