@@ -24,9 +24,14 @@
     url("/fonts/Satoshi-Variable.woff") format("woff");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Satoshi", sans-serif;
-  font-weight: 100;
   overflow-x: hidden;
   height: 100%;
   cursor: none;
@@ -61,4 +66,10 @@ body {
 
 .bgSquare {
   clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+}
+
+.slider {
+  transform-style: preserve-3d;
+  perspective: 750px;
+  overflow: hidden;
 }

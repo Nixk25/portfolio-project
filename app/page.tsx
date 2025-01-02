@@ -8,6 +8,7 @@ import Preloader from "@/components/Preloader/Preloader";
 import Hero from "@/components/Hero/Hero";
 import Skills from "@/components/Skills/Skills";
 import Projects from "@/components/Projects/Projects";
+import Novy from "@/components/Novy";
 
 export default function Home() {
   const [isPreloader, setIsPreloader] = useState(true);
@@ -47,6 +48,7 @@ export default function Home() {
       <Hero />
       <Skills />
       <Projects />
+      <Novy />
     </div>
   );
 }

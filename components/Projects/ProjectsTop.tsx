@@ -22,7 +22,7 @@ const ProjectsTop = () => {
 
   return (
     <div className="relative">
-      <div ref={sectionRef} className="bg-[#e5e5e5] h-[300vh] relative z-10">
+      <div ref={sectionRef} className=" h-[300vh] relative z-10">
         <div className="sticky top-0 w-full">
           <div className="overflow-hidden w-full h-screen">
             <motion.h2
