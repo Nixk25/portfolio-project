@@ -4,7 +4,13 @@ import { motion } from "motion/react";
 import { socialsVariants } from "@/app/variants";
 import SocialLink from "./SocialLink";
 
-const MenuSocials = ({ toggleMenu }: { toggleMenu: () => void }) => {
+const MenuSocials = ({
+  toggleMenu,
+  isBlackBg,
+}: {
+  toggleMenu: () => void;
+  isBlackBg: boolean;
+}) => {
   return (
     <div className="absolute -translate-y-1/2 right-4 top-1/2">
       <motion.div
@@ -15,7 +21,13 @@ const MenuSocials = ({ toggleMenu }: { toggleMenu: () => void }) => {
         className="flex flex-col justify-center w-full gap-3"
       >
         {SOCIALS.map(({ icon: Icon, href }, i) => (
-          <SocialLink key={i} Icon={Icon} href={href} toggleMenu={toggleMenu} />
+          <SocialLink
+            key={i}
+            Icon={Icon}
+            href={href}
+            isBlackBg={isBlackBg}
+            toggleMenu={toggleMenu}
+          />
         ))}
       </motion.div>
     </div>

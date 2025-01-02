@@ -6,9 +6,10 @@ type SocialLinkProps = {
   toggleMenu: () => void;
   Icon: React.ComponentType<{ size: number }>;
   href: string;
+  isBlackBg: boolean;
 };
 
-const SocialLink = ({ toggleMenu, Icon, href }: SocialLinkProps) => {
+const SocialLink = ({ toggleMenu, Icon, href, isBlackBg }: SocialLinkProps) => {
   return (
     <motion.a
       onClick={toggleMenu}
@@ -16,7 +17,7 @@ const SocialLink = ({ toggleMenu, Icon, href }: SocialLinkProps) => {
       href={href}
       whileHover={{ scale: 1.4 }}
       whileTap={{ scale: 0.9 }}
-      className="text-white cursor-pointer"
+      className={`${isBlackBg ? "text-black" : "text-white"} cursor-pointer`}
       rel="noreferrer"
       target="_blank"
     >

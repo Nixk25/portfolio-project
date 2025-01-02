@@ -16,11 +16,8 @@ const Skills = () => {
   const fontWeight = useTransform(scrollYProgress, [0, 1], [100, 700]);
 
   return (
-    <div
-      ref={container}
-      className="relative z-[2]    h-[300vh] mb-[100vh] mt-[50vh]"
-    >
-      <div className="sticky top-1/2 -translate-y-1/2  md:translate-y-0 md:top-0 z-0 md:space-y-[-100px] left-0 overflow-hidden">
+    <div ref={container} className="relative z-[2]    h-[300vh]  mt-[50vh]">
+      <div className="sticky top-1/2 -translate-y-1/2   z-0 md:space-y-[-100px] left-0 overflow-hidden">
         {SKILLS.map((row, i) => {
           const x = i === 0 ? x1 : i === 1 ? x2 : x3;
 

@@ -4,7 +4,13 @@ import { listVariants } from "@/app/variants";
 
 import { NAV_LINKS } from "@/app/constants";
 import NavLink from "./NavLink";
-const MenuNavLinks = ({ toggleMenu }: { toggleMenu: () => void }) => {
+const MenuNavLinks = ({
+  toggleMenu,
+  isBlackBg,
+}: {
+  toggleMenu: () => void;
+  isBlackBg: boolean;
+}) => {
   return (
     <motion.div
       variants={listVariants}
@@ -14,7 +20,12 @@ const MenuNavLinks = ({ toggleMenu }: { toggleMenu: () => void }) => {
       className="flex flex-col items-start justify-center h-full gap-5"
     >
       {NAV_LINKS.map((item, i) => (
-        <NavLink item={item} key={i} toggleMenu={toggleMenu} />
+        <NavLink
+          item={item}
+          key={i}
+          isBlackBg={isBlackBg}
+          toggleMenu={toggleMenu}
+        />
       ))}
     </motion.div>
   );

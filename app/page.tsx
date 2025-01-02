@@ -7,6 +7,7 @@ import Lines from "@/components/Ui/Lines";
 import Preloader from "@/components/Preloader/Preloader";
 import Hero from "@/components/Hero/Hero";
 import Skills from "@/components/Skills/Skills";
+import Projects from "@/components/Projects/Projects";
 
 export default function Home() {
   const [isPreloader, setIsPreloader] = useState(true);
@@ -26,9 +27,6 @@ export default function Home() {
 
     if (isPreloader) {
       lenis.scrollTo(0, { duration: 0.01 });
-      setTimeout(() => {
-        lenis.stop();
-      }, 100);
     }
 
     const timer = setTimeout(() => {
@@ -48,6 +46,7 @@ export default function Home() {
       <Preloader />
       <Hero />
       <Skills />
+      <Projects />
     </div>
   );
 }

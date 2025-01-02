@@ -23,7 +23,7 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   const top = useTransform(
     scrollYProgress,
     [0, 1],
-    [isLaptop ? "3%" : "10%", isLaptop ? "-15%" : "-0.5%"]
+    [isLaptop ? "3%" : "10%", isLaptop ? "-14%" : "-0.5%"]
   );
 
   const animatedTop = textUp
@@ -37,11 +37,11 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   useEffect(() => {
     const textTimer = setTimeout(() => {
       setTextUp(true);
-    }, 3200);
+    }, 3700);
 
     const animationTimer = setTimeout(() => {
       setIsAnimationDone(true);
-    }, 4300);
+    }, 4800);
 
     return () => {
       clearTimeout(textTimer);
@@ -93,7 +93,7 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
                   ease: "easeInOut",
                 },
                 opacity: {
-                  delay: 1 + i * 0.1,
+                  delay: 1.3 + i * 0.1,
                   duration: 1,
                   ease: "easeInOut",
                 },

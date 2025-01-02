@@ -27,7 +27,7 @@
 body {
   font-family: "Satoshi", sans-serif;
   font-weight: 100;
-  overflow: hidden;
+  overflow-x: hidden;
   height: 100%;
   cursor: none;
   background-color: #e5e5e5;
@@ -46,9 +46,19 @@ body {
 .mainHeadline {
   font-size: clamp(1rem, 16.5vw, 20rem);
 }
+
+.projectHeadline {
+  font-size: clamp(1rem, 30vw, 25rem);
+}
+
 .skillsText {
   font-size: clamp(2rem, 5vw, 6rem);
 }
+
 .heroDesc {
   font-size: clamp(1.2rem, 3vw, 3rem);
+}
+
+.bgSquare {
+  clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
 }
