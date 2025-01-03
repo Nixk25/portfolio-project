@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useScroll } from "framer-motion";
+import { useAnimation, useScroll, useInView } from "motion/react";
 import { PROJECTS } from "@/app/constants";
-import Image from "next/image";
-
+import { useAppContext } from "@/app/AppContext";
+import { useMediaQuery } from "react-responsive";
+import Project from "./Project";
 const mapRange = (
   value: number,
   inMin: number,
@@ -16,15 +17,27 @@ const mapRange = (
 };
 
 const ProjectsContent = () => {
-  const containerRef = useRef(null);
+  const isLaptop = useMediaQuery({ minWidth: 1024 });
+  const { setIsBlackBg } = useAppContext();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const controlsArray = PROJECTS.map(() => useAnimation());
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
+  const isInView = useInView(containerRef);
   useEffect(() => {
-    scrollYProgress.onChange((progress) => {
+    if (isInView) {
+      setIsBlackBg(true);
+    } else {
+      setIsBlackBg(false);
+    }
+  }, [isInView, setIsBlackBg]);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (progress: number) => {
       PROJECTS.forEach((_, index) => {
         const initialZ = index === 0 ? -2500 : index * -4000;
         const maxZIncrement = 25000;
@@ -48,50 +61,40 @@ const ProjectsContent = () => {
         }
       });
     });
+
+    return () => {
+      unsubscribe();
+    };
   }, [scrollYProgress, controlsArray]);
 
   return (
     <div
       ref={containerRef}
-      className="bg-black w-full h-[1000vh] relative z-10 text-white"
+      className="bg-black w-full h-[1000vh] relative z-[8] text-white"
     >
-      {/* Slider */}
       <div className="sticky top-0 w-full h-screen slider">
-        {PROJECTS.map(({ name, description, image }, i) => {
+        {PROJECTS.map(({ name, description, image, url, githubUrl }, i) => {
+          const leftPositionClass =
+            i % 2 === 0
+              ? isLaptop
+                ? "left-[20%]"
+                : "left-[0%]"
+              : isLaptop
+              ? "left-[50%]"
+              : "left-[10%]";
           return (
-            <motion.div
+            <Project
               key={i}
-              animate={controlsArray[i]}
-              initial={{
-                z: i * 2500,
-                opacity: 1,
-              }}
-              style={{
-                position: "absolute",
-
-                left: i % 2 === 0 ? "30%" : "70%",
-
-                zIndex: PROJECTS.length - i,
-              }}
-              className="h-[500px] top-[30%] w-[400px] overflow-hidden"
-            >
-              <div className="flex flex-col gap-5">
-                <h3 className="uppercase font-bold">{name}</h3>
-                <p className="font-thin text-white/70 tracking-tighter leading-tight">
-                  {description}
-                </p>
-              </div>
-              <div>
-                <Image
-                  src={image}
-                  alt={name}
-                  height={500}
-                  width={500}
-                  placeholder="blur"
-                  blurDataURL={image}
-                />
-              </div>
-            </motion.div>
+              name={name}
+              description={description}
+              image={image}
+              url={url}
+              githubUrl={githubUrl}
+              leftPositionClass={leftPositionClass}
+              controls={controlsArray[i]}
+              zIndex={PROJECTS.length - i}
+              i={i}
+            />
           );
         })}
       </div>

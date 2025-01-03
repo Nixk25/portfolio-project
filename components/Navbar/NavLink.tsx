@@ -27,7 +27,11 @@ const NavLink = ({
       >
         {item.label}
       </Link>
-      <div className="absolute group-hover:w-full bottom-0 left-0 w-0  transition-all duration-300 h-[1px] bg-white "></div>
+      <div
+        className={`absolute group-hover:w-full bottom-0 left-0 w-0  transition-all duration-300 h-[1px] ${
+          isBlackBg ? "bg-black" : "bg-white"
+        }`}
+      />
     </motion.div>
   );
 };

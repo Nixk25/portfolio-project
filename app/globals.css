@@ -52,6 +52,10 @@ body {
   font-size: clamp(1rem, 16.5vw, 20rem);
 }
 
+.footerHeadline {
+  font-size: clamp(1rem, 20vw, 20rem);
+}
+
 .projectHeadline {
   font-size: clamp(1rem, 30vw, 25rem);
 }
