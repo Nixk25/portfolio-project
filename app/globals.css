@@ -35,7 +35,8 @@ body {
   overflow-x: hidden;
   height: 100%;
   cursor: none;
-  background-color: #e5e5e5;
+  background-color: #c7c8c9;
+  overscroll-behavior: none;
 }
 
 .font {

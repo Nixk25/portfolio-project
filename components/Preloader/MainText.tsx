@@ -12,8 +12,24 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   const name = "Nicolas Melda";
   const isLaptop = useMediaQuery({ minWidth: 1024 });
   const IsXxlLaptop = useMediaQuery({ minWidth: 1500 });
+  const is4K = useMediaQuery({ minWidth: 2500 });
+  const isTablet = useMediaQuery({ minWidth: 768 });
+  const isSmallDevice = useMediaQuery({ minWidth: 300 });
+  const isPhone = useMediaQuery({ minWidth: 425 });
   const [textUp, setTextUp] = useState(false);
   const [isAnimationDone, setIsAnimationDone] = useState(false);
+
+  const getTopValue = () => {
+    if (is4K) return "-12%";
+    if (isLaptop) {
+      return IsXxlLaptop ? "-18.5%" : "-16%";
+    }
+    if (isTablet) return "-11%";
+    if (isSmallDevice) {
+      return isPhone ? "-1%" : "-0.5%";
+    }
+    return "-1%";
+  };
 
   const scale = useTransform(
     scrollYProgress,
@@ -24,10 +40,7 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   const top = useTransform(
     scrollYProgress,
     [0, 1],
-    [
-      isLaptop ? "3%" : "10%",
-      isLaptop ? (IsXxlLaptop ? "-17%" : "-14%") : "-1.5%",
-    ]
+    [isLaptop ? "3%" : "10%", getTopValue()]
   );
 
   const animatedTop = textUp

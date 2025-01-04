@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="z-10 relative flex justify-center items-center h-[850px]"
+      className="z-10 relative flex justify-center items-center h-[1000px]"
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
     >
       <div className="fixed h-[700px]  bottom-0 flex flex-col justify-center items-center w-full">
