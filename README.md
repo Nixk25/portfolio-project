@@ -29,5 +29,5 @@ The project began with the goal of creating an online presence to display my wor
 </ul>
 
 <h2>Project Visuals 📸</h2>
-<img width="1439" alt="Snímek obrazovky portfolio" src="https://github.com/user-attachments/assets/e1d4f75f-ab67-45d3-bc6b-c7c00e6591b2">
+<img width="1439" alt="Snímek obrazovky portfolio" src="https://github.com/user-attachments/assets/e962e4dc-c208-401f-b816-d4715322de91">
 
