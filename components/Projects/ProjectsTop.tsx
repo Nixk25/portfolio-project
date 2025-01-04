@@ -7,21 +7,25 @@ const ProjectsTop = () => {
   const sectionRef = useRef(null);
   const isLaptop = useMediaQuery({ query: "(min-width: 1024px)" });
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: ScrollYProgress1 } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
+  const { scrollYProgress: ScrollYProgress2 } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 30]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scale = useTransform(ScrollYProgress1, [0, 1], [1, 30]);
+  const opacity = useTransform(ScrollYProgress2, [0, 1], [0, 1]);
   const x = useTransform(
-    scrollYProgress,
+    ScrollYProgress1,
     [0, 1],
     ["0%", isLaptop ? "150%" : "200%"]
   );
 
   return (
-    <div className="relative">
+    <div className="relative" id="projects">
       <div ref={sectionRef} className=" h-[300vh] relative z-10">
         <div className="sticky top-0 w-full">
           <div className="overflow-hidden w-full h-screen">

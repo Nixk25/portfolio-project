@@ -11,6 +11,7 @@ type MainTextProps = {
 const MainText = ({ scrollYProgress }: MainTextProps) => {
   const name = "Nicolas Melda";
   const isLaptop = useMediaQuery({ minWidth: 1024 });
+  const IsXxlLaptop = useMediaQuery({ minWidth: 1500 });
   const [textUp, setTextUp] = useState(false);
   const [isAnimationDone, setIsAnimationDone] = useState(false);
 
@@ -23,7 +24,10 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
   const top = useTransform(
     scrollYProgress,
     [0, 1],
-    [isLaptop ? "3%" : "10%", isLaptop ? "-14%" : "-1.5%"]
+    [
+      isLaptop ? "3%" : "10%",
+      isLaptop ? (IsXxlLaptop ? "-17%" : "-14%") : "-1.5%",
+    ]
   );
 
   const animatedTop = textUp

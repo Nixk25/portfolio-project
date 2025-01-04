@@ -4,6 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer
+      id="contact"
       className="z-10 relative flex justify-center items-center h-[850px]"
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
     >
@@ -20,7 +21,7 @@ const Footer = () => {
             Have a vision? I&apos;m here to bring it to life. Let&apos;s chat!
           </p>
           <div className="flex w-full justify-start mt-20">
-            <p className="text-[40px] leading-[1.2] max-w-[50%] text-start mx-5">
+            <p className="text-[40px] font-thin leading-[1.2] max-w-[50%] text-start mx-5">
               Have a story waiting to be heard? Let&apos;s make
               it&nbsp;unforgettable—reach&nbsp;out&nbsp;now!
             </p>
@@ -30,7 +31,7 @@ const Footer = () => {
               href="mailto:nicolas.melda@icloud.com"
               className="cursor-pointer"
             >
-              Copy email address
+              Send me email
             </a>
             <p className="text-slate-600 ">
               I can&apos;t wait to see what we can create together.

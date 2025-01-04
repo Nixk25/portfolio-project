@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontSize: {
-        mainHeadline: "clamp(1rem, 16.5vw, 20rem);",
+        mainHeadline: "clamp(1rem, 14vw, 20rem);",
       },
     },
   },
