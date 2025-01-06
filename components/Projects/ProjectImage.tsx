@@ -9,7 +9,12 @@ type ProjectImageProps = {
 
 const ProjectImage = ({ url, image, name }: ProjectImageProps) => {
   return (
-    <a href={url} className="relative " target="_blank">
+    <a
+      href={url}
+      aria-label={`Go to project website ${name} made by Nicolas Melda`}
+      className="relative "
+      target="_blank"
+    >
       <Image
         src={image}
         alt={name}

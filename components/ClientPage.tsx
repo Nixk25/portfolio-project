@@ -15,7 +15,7 @@ const ClientPage = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.5,
       easing: (t) => t * (2 - t),
     });
 

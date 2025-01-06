@@ -14,10 +14,11 @@ const Footer = () => {
             href="https://cal.com/nicolasmelda/30min"
             target="_blank"
             className=" font-bold text-center footerHeadline leading-[0.8]  font"
+            aria-label="Click to start our 30-minute call"
           >
             Click to start
           </a>
-          <p className="text-lg text-center text-slate-500 mt-10">
+          <p className="text-lg text-center text-slate-700 mt-10">
             Have a vision? I&apos;m here to bring it to life. Let&apos;s chat!
           </p>
           <div className="flex w-full justify-start mt-20">
@@ -30,6 +31,7 @@ const Footer = () => {
             <a
               href="mailto:nicolas.melda@icloud.com"
               className="cursor-pointer text-sm md:text-base xl:text-lg"
+              aria-label="Send email to Nicolas Melda"
             >
               Send me email
             </a>

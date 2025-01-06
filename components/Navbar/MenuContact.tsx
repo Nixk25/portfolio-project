@@ -24,14 +24,24 @@ const MenuContact = ({
       <a
         className="hover:text-white transition-colors"
         href="mailto:nicolas.melda@icloud.com"
+        aria-label="E-mailová adresa Nicolas Melda"
       >
         nicolas.melda@icloud.com
       </a>
       <a
         className="hover:text-white flex w-min transition-colors"
         href="tel:606047025"
+        aria-label="Telefonní číslo Nicolas Melda"
       >
         606047025
+      </a>
+      <a
+        className="hover:text-white flex w-max transition-colors"
+        href="https://www.podnikatel.cz/rejstrik/nicolas-jiri-melda-22382747/"
+        target="_blank"
+        aria-label="Zobrazit IČO na stránce podnikatel.cz"
+      >
+        IČO: 22382747
       </a>
     </motion.div>
   );

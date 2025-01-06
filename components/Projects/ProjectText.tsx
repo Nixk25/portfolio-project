@@ -24,6 +24,7 @@ const ProjectText = ({
           href={githubUrl}
           target="_blank"
           className="absolute top-1/2 -translate-y-1/2 right-0 text-white"
+          aria-label={`Go to github code of project ${name} made by Nicolas Melda`}
         >
           <FaGithub size={20} />
         </a>
@@ -31,6 +32,7 @@ const ProjectText = ({
           href={url}
           target="_blank"
           className="absolute top-1/2 -translate-y-1/2 right-10 text-white"
+          aria-label={`Go to project website ${name} made by Nicolas Melda`}
         >
           <FaGlobe size={20} />
         </a>
