@@ -11,22 +11,24 @@ type MainTextProps = {
 const MainText = ({ scrollYProgress }: MainTextProps) => {
   const name = "Nicolas Melda";
   const isLaptop = useMediaQuery({ minWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1400 });
   const IsXxlLaptop = useMediaQuery({ minWidth: 1500 });
   const is4K = useMediaQuery({ minWidth: 2500 });
   const isTablet = useMediaQuery({ minWidth: 768 });
   const isSmallDevice = useMediaQuery({ minWidth: 300 });
+  const isMediumPhone = useMediaQuery({ minWidth: 375 });
   const isPhone = useMediaQuery({ minWidth: 425 });
   const [textUp, setTextUp] = useState(false);
   const [isAnimationDone, setIsAnimationDone] = useState(false);
 
   const getTopValue = () => {
-    if (is4K) return "-12%";
+    if (is4K) return "-10%";
     if (isLaptop) {
-      return IsXxlLaptop ? "-18.5%" : "-16%";
+      return IsXxlLaptop ? "-18.5%" : isDesktop ? "-14%" : "-12%";
     }
-    if (isTablet) return "-11%";
+    if (isTablet) return "-7%";
     if (isSmallDevice) {
-      return isPhone ? "-1%" : "-0.5%";
+      return isPhone ? "-1%" : isMediumPhone ? "-0.5%" : "1%";
     }
     return "-1%";
   };
