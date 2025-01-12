@@ -78,3 +78,8 @@ body {
   perspective: 750px;
   overflow: hidden;
 }
+
+.blurPath {
+  -webkit-filter: blur(24px);
+  filter: blur(24px);
+}

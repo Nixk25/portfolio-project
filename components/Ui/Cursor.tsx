@@ -44,12 +44,21 @@ const Cursor = () => {
       <svg
         ref={svgRef}
         className="fixed top-0 left-0 w-full h-full pointer-events-none z-[1000] mix-blend-difference"
+        style={{
+          WebkitFilter: "blur(2px)",
+          filter: "blur(24px)",
+        }}
       >
         <path
           ref={pathRef}
-          className="stroke-white blur-xl stroke-[20] fill-none"
+          className="stroke-white  stroke-[20] fill-none"
           d=""
-          style={{ strokeLinecap: "round", strokeLinejoin: "round" }}
+          style={{
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
+            WebkitFilter: "blur(2px)",
+            filter: "blur(24px)",
+          }}
         />
       </svg>
     )

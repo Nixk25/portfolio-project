@@ -97,7 +97,7 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
               }}
               transition={{
                 ease: "easeInOut",
-                delay: textUp ? 0 : 0.2 + i * 0.1,
+                delay: textUp ? 0 : 0.4 + i * 0.1,
               }}
             >
               {char === " " ? "\u00A0" : char}
@@ -112,12 +112,12 @@ const MainText = ({ scrollYProgress }: MainTextProps) => {
                   ease: "easeInOut",
                 },
                 opacity: {
-                  delay: 1.3 + i * 0.1,
+                  delay: 1 + i * 0.1,
                   duration: 1,
                   ease: "easeInOut",
                 },
               }}
-              className="absolute z-10 bg-[#252525] inset-0  h-full"
+              className="absolute z-10 w-full bg-[#252525] inset-0  h-full"
             />
           </div>
         ))}
