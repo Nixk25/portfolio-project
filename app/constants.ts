@@ -110,9 +110,26 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
+    name: "Topeto",
+    description:
+      "A modern website for the music band Topeto. Includes sections like About, Concerts, and Contact. Clean, responsive design made to support the band’s image.",
+    image: "/projectImages/topeto.webp",
+    url: "https://topeto.vercel.app",
+    githubUrl: "https://github.com/Nixk25/topeto",
+  },
+  {
+    name: "Posterio",
+    description:
+      "Posterio is an online gallery where designers can share and explore posters. It includes features like sign-in, color detection, and a clean interface. Created as a school project to showcase both design and coding skills.",
+    image: "/projectImages/posterio.webp",
+    url: "https://posterioproject.vercel.app/",
+    githubUrl: "https://github.com/Nixk25/posterio",
+  },
+
+  {
     name: "Loom",
     description:
-      "Loom is a website built with Next.js, React, and TypeScript, designed as a creative platform for showcasing street art. The site featuresinteractive scroll animations and dynamic visua creating an engagingand immersive experience. Users can explore trend artworks, artists,and posts.",
+      "Loom is a creative site showcasing street art with cool scrolling effects and animations. Users can explore artworks, artists, and posts in a fun and interactive way.",
     image: "/projectImages/loom.webp",
     url: "https://loomproject.vercel.app/",
     githubUrl: "https://github.com/Nixk25/loom",
@@ -120,41 +137,25 @@ export const PROJECTS = [
   {
     name: "Éclat Gallery",
     description:
-      "Éclat Gallery is built with Next.js, Framer Motion, Tailwind CSS, and shadcn/ui. It features interactive animations and a clean, modern design. The gallery showcases artwork from global artists with a focus on performance and user experience.",
+      "A stylish and modern online gallery to display global artwork. Smooth animations and a clear layout make for a pleasant browsing experience.",
     image: "/projectImages/gallery.webp",
     url: "https://gallery-theta-seven.vercel.app/",
     githubUrl: "https://github.com/Nixk25/gallery",
   },
   {
-    name: "CashMate",
-    description:
-      "CashMate is a financial education web application developed with Next.js, TypeScript, and Tailwind CSS, designed to help users manage their finances smarter and more effectively. It includes features like a guided onboarding process, personalized dashboards, and tools for tracking spending and investments. CashMate aims to improve financial literacy by offering users insightful and easy-to-use tools. This is an ongoing, complex project with continuous development to introduce advanced features and refine the user experience.",
-    image: "/projectImages/cashmate.webp",
-    url: "https://cashymate.vercel.app/",
-    githubUrl: "https://github.com/Nixk25/cashmate",
-  },
-  {
-    name: "Cookify",
-    description:
-      "Cookify is a web app for culinary enthusiasts with a demo login:email: admin@example.com password: adminadmin Built with Next.js, Tailwind CSS, Node.js, MongoDB, and NextAuth.js. It allows users to explore and manage recipes. The app features a user-friendly interface and a user management system for personalized experiences, enabling users to save their favorite recipes.",
-    image: "/projectImages/cookify.webp",
-    url: "https://coookify.vercel.app",
-    githubUrl: "https://github.com/Nixk25/rocnikovy-projekt",
-  },
-  {
     name: "TNR-Band",
     description:
-      "TNR-Band, my recent commercial project, harmonizes Next.js, Next-auth, MongoDB, Node.js, Tailwind CSS, Shadcn. After login you can add, remove or edit concerts, also concerts are automatically transfered to previous concerts. Login is hidden because only admin can use it.",
+      "A website for the band TNR-Band where the admin can log in and manage concerts. It automatically moves past events to the archive. Made for a real client, with focus on practical use.",
     image: "/projectImages/tnrband.webp",
     url: "https://tnr-band.vercel.app",
     githubUrl: "https://github.com/Nixk25/Eda",
   },
   {
-    name: "HouseFix",
+    name: "CashMate",
     description:
-      "  HouseFix is my first web project, which was created as a site for an imaginary construction company. The project uses basic technologies including HTML5, CSS3 and animate.css. This website is used to showcase a fictional construction company and its services.",
-    image: "/projectImages/housefix.webp",
-    url: "https://nixk25.github.io/build",
-    githubUrl: "https://github.com/Nixk25/build",
+      "CashMate is an app that helps people understand and manage their money better. It includes tips, dashboards, and tools to track spending. Still in progress, with more features to come.",
+    image: "/projectImages/cashmate.webp",
+    url: "https://cashymate.vercel.app/",
+    githubUrl: "https://github.com/Nixk25/cashmate",
   },
 ];
