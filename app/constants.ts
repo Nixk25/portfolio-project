@@ -110,6 +110,14 @@ export const SKILLS = [
 
 export const PROJECTS = [
   {
+    name: "Katannah",
+    description:
+      "A concept website for the Czech rapper Katannah, who participated in the rap competition The Mag Wrap. This is not his official website, but a design concept made for showcase purposes.",
+    image: "/projectImages/katannah.webp",
+    url: "https://katannah.vercel.app",
+    githubUrl: "https://github.com/Nixk25/katannah",
+  },
+  {
     name: "Topeto",
     description:
       "A modern website for the music band Topeto. Includes sections like About, Concerts, and Contact. Clean, responsive design made to support the band’s image.",
@@ -149,13 +157,5 @@ export const PROJECTS = [
     image: "/projectImages/tnrband.webp",
     url: "https://tnr-band.vercel.app",
     githubUrl: "https://github.com/Nixk25/Eda",
-  },
-  {
-    name: "CashMate",
-    description:
-      "CashMate is an app that helps people understand and manage their money better. It includes tips, dashboards, and tools to track spending. Still in progress, with more features to come.",
-    image: "/projectImages/cashmate.webp",
-    url: "https://cashymate.vercel.app/",
-    githubUrl: "https://github.com/Nixk25/cashmate",
   },
 ];
