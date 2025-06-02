@@ -55,6 +55,18 @@ export default function RootLayout({
           sizes="512x512"
           href="/android-chrome-512x512.png"
         />
+
+        <meta property="og:image" content="/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:title"
+          content="Nicolas Melda | Creative developer"
+        />
+        <meta
+          property="og:description"
+          content="Creative frontend developer focused on web apps, UI/UX design, and graphic design."
+        />
       </head>
       <body className="antialiased">
         <AppProvider>{children}</AppProvider>
